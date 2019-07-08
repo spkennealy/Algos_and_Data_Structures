@@ -1,2 +1,7 @@
+.DS_Store
+
 node_modules/
 /node_modules
+
+recursion_project/package-lock.json
+recursion_project/package
