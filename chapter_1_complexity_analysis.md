@@ -13,7 +13,7 @@
 "The job of the software engineer is to focus on the software detail and not necessarily the hardware it will run on."
 
 
-### Big O Notation
+### **Big O Notation**
 
 1. The function should be defined in terms of the size of the input(s).
 2. A smaller Big-O function is more desirable than a larger one. Intuitively, we want our algorithms to use the minimal amount of time and memory possible.
@@ -52,7 +52,7 @@ Examples of Simplifying a Sum:
 | T(n! + 10n)                          | O(n!)                |
 
 
-### Exercise
+### **Exercise**
 It's your turn. Write the Big-O simplified versions of the following functions.
 
 | **Unsimplified**                            | **Big-O Simplified** |
@@ -63,7 +63,7 @@ It's your turn. Write the Big-O simplified versions of the following functions.
 | T(n * 3<sup>n</sup> + n<sup>2</sup>)        | O(n3<sup>n</sup>)    |
 
 
-### Common Complexity Classes
+### **Common Complexity Classes**
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/complexity_analysis/complexity_classes.png)
 

@@ -34,3 +34,18 @@ memo;   // => { '2': 2, '3': 6, '4': 24, '5': 120, '6': 720, '7': 5040 }
 ```
 
 The memo object above will map an argument of factorial to it's return value. That is, the keys will be arguments and their values will be the corresponding results returned. By using the memo, we are able to avoid duplicate recursive calls! Here's some food for thought: By the time our first call to factorial(6) returns, we will not have just the arg 6 stored in the memo. Rather, we will have all args 2 to 6 stored in the memo.
+
+#### Memoizing Fib (actually)
+
+```javascript
+function fastFib(n, memo = {}) {
+    if (n in memo) return memo[n];
+    if (n === 1 || n === 2) return 1;
+
+    memo[n] = fastFib(n - 1, memo) + fastFib(n - 2, memo);
+    return memo[n];
+}
+
+fastFib(6);     // => 8
+fastFib(50);    // => 12586269025
+```
