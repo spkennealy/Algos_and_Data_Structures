@@ -3,5 +3,5 @@
 node_modules/
 /node_modules
 
-recursion_project/package-lock.json
-recursion_project/package.json
+chapter_2_recursion_project/package-lock.json
+chapter_3_memoization_project/package-lock.json

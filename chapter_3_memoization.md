@@ -49,3 +49,12 @@ function fastFib(n, memo = {}) {
 fastFib(6);     // => 8
 fastFib(50);    // => 12586269025
 ```
+
+### **The Memoization Formula**
+
+Memoization is useful when attacking recursive problems that have many overlapping subproblems. Draw out the trees first. If you notice duplicate subtrees, time to memoize. Here are the hard and fast rules you can use to memoize a slow function:
+
+1. Write the unoptimized, brute force recursion and make sure it works.
+2. Add the memo object as an additional arg to the function. The keys will represent unique arguments to the function, and their values will represent the results for those arguments.
+3. Add a base case condition to the function that returns the stored value if the function's arg is in the memo.
+4. Before you return the result of the recursive case, store it in the memo as a value and make the function's arg it's key.
