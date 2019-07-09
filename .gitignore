@@ -4,4 +4,4 @@ node_modules/
 /node_modules
 
 recursion_project/package-lock.json
-recursion_project/package
+recursion_project/package.json
