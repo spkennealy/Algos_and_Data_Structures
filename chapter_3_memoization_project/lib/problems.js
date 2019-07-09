@@ -41,16 +41,16 @@ function lucasNumberMemo(n, memo = {}) {
 function minChange(coins, amount, memo = {}) {
     if (amount in memo) return memo[amount];
     if (amount === 0) return 0;
-    let change = [];
+    let numCoins = [];
 
     coins.forEach(coin => {
         if (coin <= amount) {
             let remaining = amount - coin;
-            change.push(minChange(coins, remaining, memo) + 1);
+            numCoins.push(minChange(coins, remaining, memo) + 1);
         }
     });
 
-    memo[amount] = Math.min(...change);
+    memo[amount] = Math.min(...numCoins);
     return memo[amount];
 }
 

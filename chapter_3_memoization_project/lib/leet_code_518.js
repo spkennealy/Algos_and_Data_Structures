@@ -34,6 +34,21 @@
 // the number of coins is less than 500
 // the answer is guaranteed to fit into signed 32 - bit integer
 
-var change = function (amount, coins) {
+var change = function (amount, coins, memo={}) {
+    let key = amount + '-' + coins;
+    if (key in memo) return memo[key];
+    if (amount === 0) return 1;
+    let possCombos = 0;
 
-};
+    let currCoin = coins[coins.length - 1];
+    for (let qty = 0; qty * currCoin <= amount; qty++) {
+        possCombos += change(amount - (qty * currCoin), coins.slice(0, -1), memo);
+    }
+
+    memo[key] = possCombos;
+    return memo[key];
+}; 
+
+console.log(change(5, [1, 2, 5])); // 4
+console.log(change(3, [2])); // 0
+console.log(change(10, [10])); // 1
