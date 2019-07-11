@@ -11,8 +11,8 @@ Tabulation is all about creating a table (array) and filling it out with element
 
 ```javascript
 function tabulatedFib(n) {
-    // create a blank array of length `n`
-    let table = new Array(n);
+    // create a blank array of length `n + 1`
+    let table = new Array(n + 1);
 
     // seed the first two values
     table[0] = 0;               
