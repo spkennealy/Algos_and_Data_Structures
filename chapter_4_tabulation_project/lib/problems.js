@@ -22,23 +22,6 @@
 // stepper([2, 3, 1, 1, 0, 4, 7, 8])    // => false, there is no way to step to the end
 
 // SOLVED USING TABULATION: 
-// function stepper(nums) {
-//     let table = new Array(nums.length).fill(false);
-//     table[0] = true;
-
-//     for (let i = 0; i < table.length; i++) {
-//         if (table[i] === true) {
-//             let range = nums[i];
-//             for (let j = 1; j <= range; j++) {
-//                 table[j] = true;
-//             }
-//         }
-//     }
-
-//     return table[table.length - 1];
-// }
-
-// SOLVED USING MEMOIZATION:
 function stepper(nums) {
     let table = new Array(nums.length).fill(false);
     table[0] = true;
@@ -55,6 +38,23 @@ function stepper(nums) {
     return table[table.length - 1];
 }
 
+// SOLVED USING MEMOIZATION:
+function stepperMemo(nums, memo = {}) {
+    if (nums.length in memo) return memo[nums];
+    if (nums.length === 0) return true;
+
+    let maxRange = nums[0];
+    for (let step = 1; step <= maxRange; step++) {
+        if (stepperMemo(nums.slice(step), memo)) {
+            memo[nums.length] = true;
+            return true;
+        }
+    }
+    
+    memo[nums.length] = false;
+    return false;
+}
+
 
 // Write a function, maxNonAdjacentSum(nums), that takes in an array of nonnegative numbers.
 // The function should return the maximum sum of elements in the array we can get if we cannot take
@@ -67,7 +67,7 @@ function stepper(nums) {
 // maxNonAdjacentSum([2, 7, 9, 3, 4])   // => 15, because 2 + 9 + 4
 // maxNonAdjacentSum([4,2,1,6])         // => 10, because 4 + 6 
 function maxNonAdjacentSum(nums) {
-
+    
 }
 
 
