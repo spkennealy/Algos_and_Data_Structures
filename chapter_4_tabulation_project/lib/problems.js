@@ -39,21 +39,21 @@ function stepper(nums) {
 }
 
 // SOLVED USING MEMOIZATION:
-function stepperMemo(nums, memo = {}) {
-    if (nums.length in memo) return memo[nums];
-    if (nums.length === 0) return true;
+// function stepper(nums, memo = {}) {
+//     if (nums.length in memo) return memo[nums];
+//     if (nums.length === 0) return true;
 
-    let maxRange = nums[0];
-    for (let step = 1; step <= maxRange; step++) {
-        if (stepperMemo(nums.slice(step), memo)) {
-            memo[nums.length] = true;
-            return true;
-        }
-    }
+//     let maxRange = nums[0];
+//     for (let step = 1; step <= maxRange; step++) {
+//         if (stepper(nums.slice(step), memo)) {
+//             memo[nums.length] = true;
+//             return true;
+//         }
+//     }
     
-    memo[nums.length] = false;
-    return false;
-}
+//     memo[nums.length] = false;
+//     return false;
+// }
 
 
 // Write a function, maxNonAdjacentSum(nums), that takes in an array of nonnegative numbers.
@@ -66,9 +66,16 @@ function stepperMemo(nums, memo = {}) {
 //
 // maxNonAdjacentSum([2, 7, 9, 3, 4])   // => 15, because 2 + 9 + 4
 // maxNonAdjacentSum([4,2,1,6])         // => 10, because 4 + 6 
+
+// SOLVED USING TABULATION: 
 function maxNonAdjacentSum(nums) {
-    
+    let table = new Array(nums.length).fill(false);
 }
+
+// SOLVED USING MEMOIZATION:
+// function maxNonAdjacentSum(nums) {
+    
+// }
 
 
 // Write a function, minChange(coins, amount), that accepts an array of coin values
