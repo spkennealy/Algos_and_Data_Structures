@@ -32,3 +32,17 @@ As we iterate through the array, we compare each element to its right neighbor. 
 
 Wash, rinse, repeat, until all elements of the array are sorted.
 
+### **How does a pass of Bubble Sort work?**
+
+Bubble sort works by performing multiple passes to move elements closer to their final positions. A single pass will iterate through the entire array once.
+
+A pass works by scanning the array from left to right, two elements at a time, and checking if they are ordered correctly. To be ordered correctly the first element must be less than or equal to the second. If the two elements are not ordered properly, then we swap them to correct their order. Afterwards, we scan the next two numbers and continue repeat this process until we have gone through the entire array.
+
+Let's see one pass of bubble sort on the array [2, 8, 5, 2, 6]. On each step the elements currently being scanned are in boldL
+
+* 2, 8, 5, 2, 6 - ordered, so leave them alone
+* 2, 8, 5, 2, 6 - not ordered, so swap
+* 2, 5, 8, 2, 6 - not ordered, so swap
+* 2, 5, 2, 8, 6 - not ordered, so swap
+* 2, 5, 2, 6, 8 - our first pass is complete
+
