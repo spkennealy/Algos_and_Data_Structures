@@ -14,3 +14,21 @@ Bubble Sort is almost never a good choice in industry. simply because:
 So don't be that engineer.
 
 That said, it is quite useful as an educational base for us, and as a conversational base for you while interviewing, because we can discuss how other more elegant and efficient algorithms improve upon it, and taking naive code and improving upon it by weighing the technical tradeoffs of your other options is 100% the name of the game when trying to level yourself up from a junior engineer to a senior engineer.
+
+### **The Algorithm: "Bubbling Up"**
+
+As we progress through the algorithms and data structures of this course, you'll eventually notice that there are some reoccuring funny terms. "Bubbling up" is one of those terms.
+
+When we say that an item in a collection "bubbles up," we imply that:
+* The item is in motion.
+* The item is moving in some direction.
+* The item has some final resting destination.
+
+When invoking Bubble Sort, if we are sorting an array of integers so that they occur in ascending order, the largest integers will "bubble up" to the "top" (the end) of the array, one at a time.
+
+The largest values are captured, put into motion in the direction defined by our desired sort (ascending right now), and traverse the array until they arrive at their end destination. 
+
+As we iterate through the array, we compare each element to its right neighbor. If the current element is larger than its neighbor, we swap them.
+
+Wash, rinse, repeat, until all elements of the array are sorted.
+
