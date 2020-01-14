@@ -46,3 +46,9 @@ Let's see one pass of bubble sort on the array [2, 8, 5, 2, 6]. On each step the
 * 2, 5, 2, 8, 6 - not ordered, so swap
 * 2, 5, 2, 6, 8 - our first pass is complete
 
+### **How do we know when we are done Bubble Sorting?**
+
+During Bubble Sort, we can tell if the array is in sorted order by checking if we made a swap during the previous pass performed. If a swap was not performed during the previous pass, then the array must be totally sorted and we can stop the algorithm.
+
+You're probably wondering why that makes sense. Recall that a pass of Bubble Sort checks if any adjacent elements are out of order and swaps them if they are. If we don't make any swaps during a pass, then everything must be already in order, so our job is done. Let that marinate for a bit.
+
