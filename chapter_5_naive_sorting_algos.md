@@ -52,3 +52,20 @@ During Bubble Sort, we can tell if the array is in sorted order by checking if w
 
 You're probably wondering why that makes sense. Recall that a pass of Bubble Sort checks if any adjacent elements are out of order and swaps them if they are. If we don't make any swaps during a pass, then everything must be already in order, so our job is done. Let that marinate for a bit.
 
+### **Swapping Elements**
+
+Like we saw in the previous example, Bubble Sort manipulates the array by swapping the position of two elements. To implement Bubble Sort in JS, we'll need to perform this operation, so let's build a helper function. A key detail in this function is that we need an extra letiable to store one of the elements since we will be overwriting them in the array:
+```js
+function swap(array, idx1, idx2) {
+  let temp = array[idx1];     // save a copy of the first ele
+  array[idx1] = array[idx2];  // overwrite the first ele with the second ele
+  array[idx2] = temp;         // overwrite the second ele with the first ele copy
+}
+```
+
+Note that the swap function does not create or return a new array. It mutates the original array:
+```js
+let arr1 = [2, 8, 5, 2, 6];
+swap(arr1, 1, 2);
+arr1; // => [ 2, 5, 8, 2, 6 ]
+```
