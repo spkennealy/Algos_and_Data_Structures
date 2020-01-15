@@ -130,3 +130,8 @@ Picture the worst case scenario where our input array is completely unsorted. Le
 * Those two loops are nested so our total time complexity is O(n * n) = O(n2).
 
 It's worst mentioning that the best case scenario is when the input array is already fully sorted. This will cause our for loop to conduct a single pass without performing any swap, so the while loop will not trigger further iterations. Thus means best case time complexity is O(n) for bubble sort. This best case linear time is probably the only advantage of bubble sort. We are mainly interested in the worst case as engineers, so overall we are not impressed.
+
+### **Space Complexity: O(1)**
+
+Bubble Sort is a constant space, O(1), algorithm. The amount of memory consumed by the algorithm does not increase relative to the size of the input array. We use the same amount of memory and create the same amount of letiables regardless of the size of our input, making this algorithm quite space efficient. The space efficiency mostly comes from the fact that we mutate the input array, in-place.
+
