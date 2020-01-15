@@ -135,3 +135,9 @@ It's worst mentioning that the best case scenario is when the input array is alr
 
 Bubble Sort is a constant space, O(1), algorithm. The amount of memory consumed by the algorithm does not increase relative to the size of the input array. We use the same amount of memory and create the same amount of letiables regardless of the size of our input, making this algorithm quite space efficient. The space efficiency mostly comes from the fact that we mutate the input array, in-place.
 
+### **When should we use Bubble Sort?**
+
+Nearly never, but it may be a good choice in the following list of special cases:
+* When sorting really small arrays where run time will be negligible no matter what algorithm we choose.
+* When sorting arrays that we expect to already be nearly sorted.
+* At parties
