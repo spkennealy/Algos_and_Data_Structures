@@ -118,3 +118,15 @@ function bubbleSort(array) {
   return array;
 }
 ```
+
+## Time and Space Complexity Analysis
+
+### **Time Complexity: O(n2)**
+
+Picture the worst case scenario where our input array is completely unsorted. Let's say it's sorted in fully decreasing order, but our goal is to sort it in increasing order:
+* n is the length of the inut array
+* The inner for loop along contributes O(n) in isolation, this is plain to see
+* The outer while loop contributes O(n) in isolation because a single iteration of the while loop will bring one element to it's final resting position. In other words, we keep running the while loop until the array is fully sorted. To fully sort the array we will need to bring all n elements into their final resting positions.
+* Those two loops are nested so our total time complexity is O(n * n) = O(n2).
+
+It's worst mentioning that the best case scenario is when the input array is already fully sorted. This will cause our for loop to conduct a single pass without performing any swap, so the while loop will not trigger further iterations. Thus means best case time complexity is O(n) for bubble sort. This best case linear time is probably the only advantage of bubble sort. We are mainly interested in the worst case as engineers, so overall we are not impressed.
