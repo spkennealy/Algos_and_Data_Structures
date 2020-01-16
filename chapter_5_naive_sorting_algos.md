@@ -146,3 +146,7 @@ Nearly never, but it may be a good choice in the following list of special cases
 ## Selection Sort Notes
 
 Selection Sort is very similar to Bubble Sort. The major difference between the two is that Bubble Sort bubbles the largest elements up to the end of the array, while Selection Sort selects the smallest elements of the array and directly places them at the beginning of the array in sorted position. Selection sort will utilize swapping just as bubble sort did. Let's carefully break this sorting algorithm down.
+
+### **The Algorithm: "Select the next smallest"**
+
+Selection sort works by maintaining a sorted region on the left side of the input array; this sorted region will grow by one element with every "pass" of the algorithm. A single "pass" of selection sort will select the next smallest element of unsorted region of the array and move it to the sorted region. Because a single pass of selection sort will move an element of the unsorted region into the sorted region, this means a single pass will shrink the unsorted region by 1 element whilst increasing the sorted region by 1 element. Selection sort is complete when the sorted region spans the entire array and the unsorted region is empty!
