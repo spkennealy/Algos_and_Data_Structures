@@ -1,6 +1,6 @@
 # Naive Sorting Algorithms
 
-### **Bubble Sort**
+## Bubble Sort
 
 Bubble Sort is generally the first major sorting algorithm to come up in most introductory programming courses. Learning about this algorithm is useful educationally, as it provides a good introduction to the challenges we face when tasked with converting unsorted data into sorted data, such as conducting logical comparisons, making swaps while iterating, and making optimizations. It's also quite simple to implement, and can be done quickly.
 
@@ -141,3 +141,8 @@ Nearly never, but it may be a good choice in the following list of special cases
 * When sorting really small arrays where run time will be negligible no matter what algorithm we choose.
 * When sorting arrays that we expect to already be nearly sorted.
 * At parties
+
+
+## Selection Sort Notes
+
+Selection Sort is very similar to Bubble Sort. The major difference between the two is that Bubble Sort bubbles the largest elements up to the end of the array, while Selection Sort selects the smallest elements of the array and directly places them at the beginning of the array in sorted position. Selection sort will utilize swapping just as bubble sort did. Let's carefully break this sorting algorithm down.
