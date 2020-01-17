@@ -241,3 +241,7 @@ Selection Sort runtime is O(n2) because:
 * The two loops are nested so our total time complexity is O(n * n / 2) = O(n2)
 
 You'll notice that during this analysis we said something silly like O(n / 2). In some analyses such as this one, we'll prefer to drop the constants only at the end of the sketch so you understand the logical steps we took to derive a complicated time complexity.
+
+#### **Space Complexity: O(1)**
+
+The amount of memory consumed by the algorithm does not increase relative to the size of the input array. We use the same amount of memory and create the same amount of variables regardless of the size of our input. A quick indicator of this is the fact that we don't create any arrays.
