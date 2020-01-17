@@ -150,3 +150,22 @@ Selection Sort is very similar to Bubble Sort. The major difference between the 
 ### **The Algorithm: "Select the next smallest"**
 
 Selection sort works by maintaining a sorted region on the left side of the input array; this sorted region will grow by one element with every "pass" of the algorithm. A single "pass" of selection sort will select the next smallest element of unsorted region of the array and move it to the sorted region. Because a single pass of selection sort will move an element of the unsorted region into the sorted region, this means a single pass will shrink the unsorted region by 1 element whilst increasing the sorted region by 1 element. Selection sort is complete when the sorted region spans the entire array and the unsorted region is empty!
+
+### **Finding the Minimum Value**
+
+Since a component of Selection Sort requires us to locate the smallest value in the array, let's focus on that pattern in isolation:
+```js
+function minumumValueIndex(arr) {
+    let minIndex = 0;
+
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[minIndex] > arr[j]) {
+            minIndex = j;
+        }
+    }
+
+    return minIndex;
+}
+```
+
+Pretty basic code right? We won't use this explicit helper function to solve selection sort, however we will borrow from this pattern soon.
