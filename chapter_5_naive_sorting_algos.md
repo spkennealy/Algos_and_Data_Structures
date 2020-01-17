@@ -222,3 +222,22 @@ function selectionSort(arr) {
     return arr;
 }
 ```
+
+### **Time and Space Complexity Analysis**
+
+#### **Time Complexity**
+
+Selection Sort runtime is O(n2) because:
+* n is the length of the input array
+* The outer loop i contributes O(n) in isolation, this is plain to see
+* The inner loop j is more complicated, it will make one less iteration for every iteration of i.
+  * for example, let's say we have an array of 10 elements, n = 10.
+  * the first full cycle of j will have 9 iterations
+  * the second full cycle of j will have 8 iterations
+  * the third full cycle of j will have 7 iterations
+  * ...
+  * the last full cycle of j will have 1 iteration
+  * This means that the inner loop j will contribute roughly O(n / 2) on average
+* The two loops are nested so our total time complexity is O(n * n / 2) = O(n2)
+
+You'll notice that during this analysis we said something silly like O(n / 2). In some analyses such as this one, we'll prefer to drop the constants only at the end of the sketch so you understand the logical steps we took to derive a complicated time complexity.
