@@ -151,7 +151,7 @@ Selection Sort is very similar to Bubble Sort. The major difference between the 
 
 Selection sort works by maintaining a sorted region on the left side of the input array; this sorted region will grow by one element with every "pass" of the algorithm. A single "pass" of selection sort will select the next smallest element of unsorted region of the array and move it to the sorted region. Because a single pass of selection sort will move an element of the unsorted region into the sorted region, this means a single pass will shrink the unsorted region by 1 element whilst increasing the sorted region by 1 element. Selection sort is complete when the sorted region spans the entire array and the unsorted region is empty!
 
-### **Finding the Minimum Value**
+#### **Finding the Minimum Value**
 
 Since a component of Selection Sort requires us to locate the smallest value in the array, let's focus on that pattern in isolation:
 ```js
@@ -169,3 +169,32 @@ function minumumValueIndex(arr) {
 ```
 
 Pretty basic code right? We won't use this explicit helper function to solve selection sort, however we will borrow from this pattern soon.
+
+#### **Selection Sort JS Implementation**
+
+We'll also utilize the classic swap pattern that we introduced in bubbleSort. To refresh:
+```js
+function swap(arr, index1, index2) {
+  let temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
+```
+
+Now for the punchline! Take a look at the snippet below and try to understand how it corresponds to our conceptual understanding of the selection sort algorithm. Scroll down to the commented version when you get stuck.
+```js
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      }
+    }
+
+    swap(arr, i, minIndex);
+  }
+  return arr;
+}
+```
