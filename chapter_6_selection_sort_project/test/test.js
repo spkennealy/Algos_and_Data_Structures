@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { selectionSort, swap } = require('../lib/selection_sort.js');
+const { selectionSort, swap } = require('../lib/selection_sort.js.js.js');
 
 describe('swap()', () => {
     // it should accept an array and two indices as args
