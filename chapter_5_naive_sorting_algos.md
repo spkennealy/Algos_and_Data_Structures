@@ -255,3 +255,8 @@ Bubble Sort, in the worst case, invokes a swap on every single comparison. Selec
 Selection Sort becomes advantageous when making a swap is the most expensive operation in your system. You will likely rarely encounter this scenario, but in a situation where you've built (or have inherited) a system with suboptimal write speed ability, for instance, maybe you're sorting data in a specialized database tuned strictly for fast read speeds at the expense of slow write speeds, using Selection Sort would save you a ton of expensive operations that could potential crash your system under peak load.
 
 Though in industry this situation is very rare, the insights above make for a fantastic conversational piece when weighing technical tradeoffs while strategizing solutions in an interview setting. This commentary may help deliver the impression that you are well-versed in system design and technical analysis, a key indicator that someone is prepared for a senior level position.
+
+
+## Insertion Sort
+
+With Bubble Sort and Selection Sort now in our tool box, we're starting to get some experience points under our belt! Let's a learn another sort to round out our naive, slow category of sorting algorithms!
