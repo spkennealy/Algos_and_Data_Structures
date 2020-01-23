@@ -276,3 +276,19 @@ Insertion Sort grows a sorted array on the left side of the input array by:
 * And inserting the current element into that position.
 
 These steps are easy to confuse with selection sort, so you'll want to watch the video lecture and drawing that accompanies this reading as always!
+
+#### **Insertion Sort JS Implementation**
+
+Take a look at the snippet below and try to understand how it corresponds to our conceptual understanding of the Insertion Sort algorithm. Scroll down to the commented version when you get stuck:
+```js
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let currElement = arr[i];
+    for (var j = i - 1; j >= 0 && currElement < arr[j]; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = currElement;
+  }
+  return arr;
+}
+```
