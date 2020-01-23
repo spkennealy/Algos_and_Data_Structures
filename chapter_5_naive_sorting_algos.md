@@ -266,3 +266,13 @@ With Bubble Sort and Selection Sort now in our tool box, we're starting to get s
 Insertion Sort is similar to Selection Sort in that it gradually builds up a larger and larger sorted region at the left-most end of the array.
 
 However, Insertion Sort differs from Selection Sort because this algorithm does not focus on searching for the right element to place (the next smallest in our Selection Sort) on each pass through the array. Instead, it focuses on sorting each element in the order they appear from left to right, regardless of their value, and inserting them in the most appropriate position in the sorted region.
+
+#### **The Steps**
+
+Insertion Sort grows a sorted array on the left side of the input array by:
+* Iterating across the input array one element at a time
+* Selecting the current element
+* Finding the position in the left sorted region that our element can be inserted whilst maintaining sorted order
+* And inserting the current element into that position.
+
+These steps are easy to confuse with selection sort, so you'll want to watch the video lecture and drawing that accompanies this reading as always!
