@@ -260,3 +260,9 @@ Though in industry this situation is very rare, the insights above make for a fa
 ## Insertion Sort
 
 With Bubble Sort and Selection Sort now in our tool box, we're starting to get some experience points under our belt! Let's a learn another sort to round out our naive, slow category of sorting algorithms!
+
+### **The Algorithm: "Insert into the sorted region"**
+
+Insertion Sort is similar to Selection Sort in that it gradually builds up a larger and larger sorted region at the left-most end of the array.
+
+However, Insertion Sort differs from Selection Sort because this algorithm does not focus on searching for the right element to place (the next smallest in our Selection Sort) on each pass through the array. Instead, it focuses on sorting each element in the order they appear from left to right, regardless of their value, and inserting them in the most appropriate position in the sorted region.
