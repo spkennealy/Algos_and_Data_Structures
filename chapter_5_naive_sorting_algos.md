@@ -319,3 +319,17 @@ function insertionSort(arr) {
     return arr;
 }
 ```
+
+**There are a few key pieces to point out in the above solution before moving forward:**
+1. Our outer for loop starts at the 1st index, not the 0th index, and moves to the right.
+2. Our inner for loop starts immediately to the left of the current element, and moves to the left.
+3. The condition for our inner for loop is complicated, and behaves similarly to a while loop!
+  * We continue iterating to the left toward j = 0, only while the currElement is less than arr[j].
+  * We do this over and over until we find the proper place to insert currElement, and then we exit the inner loop!
+4. When shifting elements in the sorted region to the right, we do not replace their value at their old index!
+  * If the input array is [1, 2, 4, 3], and currElement is 3, after comparing 4 and 3, but before inserting 3 between 2 and 4, the array will look like this: [1, 2, 4, 4].
+
+I did say we were going to level up a bit! Some students will grasp this algorithm quickly, and others will need more time. If you are currently scratching your head, that is perfectly okay because when this one clicks, it clicks for good.
+
+If you're struggling, I cannot emphasize enough how helpful it will be to take out a pen and paper or grab a whiteboard marker and step through the solution provided above one step at a time. Keep track of i, j, currElement, arr[j], and the input arr itself at every step. After going through this a few times, I promise you'll have your "ah HA!" moment.
+
