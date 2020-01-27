@@ -333,3 +333,19 @@ I did say we were going to level up a bit! Some students will grasp this algorit
 
 If you're struggling, I cannot emphasize enough how helpful it will be to take out a pen and paper or grab a whiteboard marker and step through the solution provided above one step at a time. Keep track of i, j, currElement, arr[j], and the input arr itself at every step. After going through this a few times, I promise you'll have your "ah HA!" moment.
 
+### **Time and Space Complexity Analysis**
+
+#### **Time Complexity**
+
+Insertion Sort runtime is O(n2) because:
+
+In the worst case scenario where our input array is entirely unsorted, since this algorithm contains a nested loop, its run time behaves similarly to bubbleSort and selectionSort. In this case, we are forced to make a comparison at each iteration of the inner loop. Not convinced? Let's derive the complexity. We'll use much of the same argument as we did in selectionSort. Say we had the worst case scenario where are input array is sorted in full decreasing order, but we wanted to sort it in increasing order:
+* n is the length of the input array
+* The outer loop i contributes O(n) in isolation, this is plain to see
+* The inner loop j is more complicated. We know j will iterate until it finds an appropriate place to insert the currElement into the sorted region. However, since we are discussing the case where the data is already in decreasing order, the element must travel the maximum distance to find it's insertion point! We know this insertion point to be index 0, since every currElement will be the next smallest of the array. So:
+  * the 1st element travels 1 distance to be inserted
+  * the 2nd element travels 2 distance to be inserted
+  * the 3rd element travels 3 distance to be inserted
+  * the n-1th element travels n-1 distance to be inserted
+  * This means that our inner loop j will contribute roughly O(n / 2) on average
+* The two loops are nested so our total time complexity is O(n * n / 2) = O(n2)
