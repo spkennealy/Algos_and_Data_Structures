@@ -366,3 +366,9 @@ If you must sort a set of data that is ever-incoming, for example, maybe you are
 Insertion Sort works well in this situation because the left side of the array is always sorted, and in the case of nearly sorted arrays, it can run in linear time. The absolute best case scenario for Insertion Sort is when there is only one unsorted element, and it is located all the way to the right of the array.
 
 Well, if you have data constantly being pushed to the array, it will always be added to the right side. If you keep your algorithm constantly running, the left side will always be sorted. Now you have linear time sort.
+
+Else:
+Insertion Sort is, in general, useful in all the same situations as Bubble Sort. It's a good option when:
+
+You are sorting really small arrays where run time will be negligible no matter what algorithm we choose.
+You are sorting an array that you expect to already be nearly sorted.
