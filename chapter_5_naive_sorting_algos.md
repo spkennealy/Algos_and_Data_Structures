@@ -349,3 +349,12 @@ In the worst case scenario where our input array is entirely unsorted, since thi
   * the n-1th element travels n-1 distance to be inserted
   * This means that our inner loop j will contribute roughly O(n / 2) on average
 * The two loops are nested so our total time complexity is O(n * n / 2) = O(n2)
+
+#### **Space Complexity**
+
+`O(1)`
+
+The amount of memory consumed by the algorithm does not increase relative to the size of the input array. We use the same amount of memory and create the same amount of variables regardless of the size of our input. A quick indicator of this is the fact that we don't create any arrays.
+
+#### **When should we use Insertion Sort?**
+
