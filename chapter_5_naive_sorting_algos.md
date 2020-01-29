@@ -358,3 +358,11 @@ The amount of memory consumed by the algorithm does not increase relative to the
 
 #### **When should we use Insertion Sort?**
 
+"Online Algorithms": the input data is streamed in pieces
+Insertion Sort has one advantage that makes it absolutely supreme in one special case. Insertion Sort is what's known as an "online" algorithm. Online algorithms are great when you're dealing with streaming data, because they can sort the data live as it is received.
+
+If you must sort a set of data that is ever-incoming, for example, maybe you are sorting the most relevant posts in a social media feed so that those posts that are most likely to impact the site's audience always appear at the top of the feed, an online alogirthm like Insertion Sort is a great option.
+
+Insertion Sort works well in this situation because the left side of the array is always sorted, and in the case of nearly sorted arrays, it can run in linear time. The absolute best case scenario for Insertion Sort is when there is only one unsorted element, and it is located all the way to the right of the array.
+
+Well, if you have data constantly being pushed to the array, it will always be added to the right side. If you keep your algorithm constantly running, the left side will always be sorted. Now you have linear time sort.
