@@ -85,3 +85,57 @@ merge([10, 13, 15, 25], []);    // => [10, 13, 15, 25]
 ```
 
 Nice! We now have a way to merge two sorted arrays into a single sorted array. It's worth mentioning that merge will have a O(n) runtime where n is the combined length of the two input arrays. This is what we meant when we said it was "easy" to merge two sorted arrays; linear time is fast! We'll find fact this useful later.
+
+### **Merge Sort Recursion**
+
+Now that we satisfied the merge idea, let's handle the second point. That is, we say an array of 1 or 0 elements is already sorted. This will be the base case of our recursion. Let's begin adding this code:
+```js
+function mergeSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+    // ....
+}
+```
+
+If our base case pretains to an array of a very small size, then the design of our recursive case should make progress toward hitting this base scenario. In other words, we should recursively call mergeSort on smaller and smaller arrays. A logical way to do this is to take the input array and split it into left and right halves.
+```js
+function mergeSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx);
+
+    let sortedLeft = mergeSort(leftHalf);
+    let sortedRight = mergeSort(rightHalf);
+    // ...
+}
+```
+
+Here is the part of the recursion where we do a lot of hand waving and we take things on faith. We know that mergeSort will take in an array and return the sorted version; we assume that it works. That means the two recursive calls will return the sortedLeft and sortedRight halves.
+
+Okay, so we have two sorted arrays. We want to return one sorted array. So merge them! Using the `merge` function we designed earlier:
+```js
+function mergeSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx);
+
+    let sortedLeft = mergeSort(leftHalf);
+    let sortedRight = mergeSort(rightHalf);
+    
+    return merge(sortedLeft, sortedRight);
+}
+
+```
+
+Wow. that's it. Notice how light the implementation of mergeSort is. Much of the heavy lifting (the actually comparisons) is done by the merge helper.
+
+`mergeSort` is a classic example of a "Divide and Conquer" algorithm. In other words, we keep breaking the array into smaller and smaller sub arrays. This is the same as saying we take the problem and break it down into smaller and smaller subproblems. We do this until the subproblems are so small that we trivially know the answer to them (an array length 0 or 1 is already sorted). Once we have those subanswers we can combine to reconstruct the larger problems that we previously divided (merge the left and right subarrays).
