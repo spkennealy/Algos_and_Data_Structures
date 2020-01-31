@@ -139,3 +139,43 @@ function mergeSort(array) {
 Wow. that's it. Notice how light the implementation of mergeSort is. Much of the heavy lifting (the actually comparisons) is done by the merge helper.
 
 `mergeSort` is a classic example of a "Divide and Conquer" algorithm. In other words, we keep breaking the array into smaller and smaller sub arrays. This is the same as saying we take the problem and break it down into smaller and smaller subproblems. We do this until the subproblems are so small that we trivially know the answer to them (an array length 0 or 1 is already sorted). Once we have those subanswers we can combine to reconstruct the larger problems that we previously divided (merge the left and right subarrays).
+
+### **Merge Sort JS Implementation**
+
+Here is the full code for your reference:
+```js
+function merge(array1, array2) {
+    let merged = [];
+
+    while (array1.length || array2.length) {
+        let ele1 = array1.length ? array1[0] : Infinity;
+        let ele2 = array2.length ? array2[0] : Infinity;
+
+        let next;
+        if (ele1 < ele2) {
+            next = array1.shift();
+        } else {
+            next = array2.shift();
+        }
+
+        merged.push(next);
+    }
+
+    return merged;
+}
+
+function mergeSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx);
+
+    let sortedLeft = mergeSort(leftHalf);
+    let sortedRight = mergeSort(rightHalf);
+
+    return merge(sortedLeft, sortedRight);
+}
+```
