@@ -179,3 +179,16 @@ function mergeSort(array) {
     return merge(sortedLeft, sortedRight);
 }
 ```
+
+### **Time and Space Complexity Analysis**
+
+The complexity analysis of this algorithm is easier to explain through visuals, so we highly encourage you to watch the lecture that accompanies this reading. In any case, here is a summary of the complexity:
+
+#### **Time Complexity: O(n log(n))**
+* n is the length of the input array
+* We must calculate how many recursive calls we make. The number of recursive calls is the number of times we must split the array to reach the base case. Since we split in half each time, the number of recursive calls is O(log(n)).
+    * for example, say we had an array of length 32
+    * then the length would change as 32 -> 16 -> 8 -> 4 -> 2 -> 1, we have to split 5 times before reaching the base case, log(32) = 5
+    * in our algorithm, log(n) describes how many times we must halve n until the quantity reaches 1.
+* Besides the recursive calls, we must consider the while loop within the merge function, which contributes O(n) in isolation
+* We call merge in every recursive mergeSort call, so the total complexity is O(n * log(n))
