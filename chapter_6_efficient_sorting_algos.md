@@ -198,3 +198,13 @@ The complexity analysis of this algorithm is easier to explain through visuals, 
 Merge Sort is the first non-O(1) space sorting algorithm we've seen thus far.
 
 The larger the size of our input array, the greater the number of subarrays we must create in memory. These are not free! They each take up finite space, and we will need a new subarray for each element in the original input. Therefore, Merge Sort has a linear space complexity, O(n).
+
+#### **When should we use Merge Sort?**
+
+Unless we, the engineers, have access in advance to some unique, exploitable insight about our dataset, it turns out that O(n log n) time is the best we can do when sorting unknown datasets.
+
+That means that Merge Sort is fast! It's way faster than Bubble Sort, Selection Sort, and Insertion Sort. However, due to its linear space complexity, we must always weigh the tradeoff between speed and memory consumption when making the choice to use Merge Sort. Consider the following:
+* If you have unlimited memory available, use it, it's fast!
+* If you have a decent amount of memory available and a medium sized dataset, run some tests first, but use it!
+* If you have very limited memory and you've got time to kill, maybe you should consider other options.
+* If you have very limited memory and no time to kill...well, you're going to have to do some data analysis to look for some exploitable feature of the data set, but that takes human time.
