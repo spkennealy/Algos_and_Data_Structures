@@ -192,3 +192,9 @@ The complexity analysis of this algorithm is easier to explain through visuals, 
     * in our algorithm, log(n) describes how many times we must halve n until the quantity reaches 1.
 * Besides the recursive calls, we must consider the while loop within the merge function, which contributes O(n) in isolation
 * We call merge in every recursive mergeSort call, so the total complexity is O(n * log(n))
+
+#### **Space Complexity: O(n)**
+
+Merge Sort is the first non-O(1) space sorting algorithm we've seen thus far.
+
+The larger the size of our input array, the greater the number of subarrays we must create in memory. These are not free! They each take up finite space, and we will need a new subarray for each element in the original input. Therefore, Merge Sort has a linear space complexity, O(n).
