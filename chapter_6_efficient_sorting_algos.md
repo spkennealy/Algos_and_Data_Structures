@@ -208,3 +208,11 @@ That means that Merge Sort is fast! It's way faster than Bubble Sort, Selection 
 * If you have a decent amount of memory available and a medium sized dataset, run some tests first, but use it!
 * If you have very limited memory and you've got time to kill, maybe you should consider other options.
 * If you have very limited memory and no time to kill...well, you're going to have to do some data analysis to look for some exploitable feature of the data set, but that takes human time.
+
+
+## Quick Sort
+
+Time for another efficient sorting algorithm! Let's learn quickSort. Like we did previously for mergeSort, let's build up the the algorithm together. You'll see that quickSort has a similar "divide and conquer" strategy to mergeSort. Here are a few key ideas that will motivate our design:
+* it is easy to sort elements of an array relative to a particular target value
+    * for example given [7, 3, 8, 9, 2] and a target of 5, we know [3, 2] are numbers less than 5 and [7, 8, 9] are numbers greater than 5.
+* we can consider an array of 0 or 1 elements as already trivially sorted
