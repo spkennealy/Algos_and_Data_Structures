@@ -216,3 +216,13 @@ Time for another efficient sorting algorithm! Let's learn quickSort. Like we did
 * it is easy to sort elements of an array relative to a particular target value
     * for example given [7, 3, 8, 9, 2] and a target of 5, we know [3, 2] are numbers less than 5 and [7, 8, 9] are numbers greater than 5.
 * we can consider an array of 0 or 1 elements as already trivially sorted
+
+### **How does it work?**
+
+In general, the strategy is to divide the input array into two subarrays; one with the smaller elements, and one with the larger elements. Then, it recursively operates on the two new subarrays, and continues this process until we reach subarrays of length 1 or smaller. As we have seen with Merge Sort, arrays of such length are automatically sorted (for obvious reasons).
+
+The steps, when discussed on a high level, are simple:
+* Select one element called the "pivot". (This step varies by the implementation.)
+    * Find the index in the final output at which the pivot element should end up. To do this:
+* Move all elements smaller than the pivot to the pivot's left, and all elements greater than than the pivot to the pivot's right.
+* Repeat the process, individually, for the left side, and then for the right side, by recursively calling Quick Sort on each subarray.
