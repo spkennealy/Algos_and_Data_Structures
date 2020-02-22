@@ -266,3 +266,90 @@ function partition(array, pivot) {
 Both of the above implementations are correct, but we'll use the second one as it is cleaner. It's worth mentioning that the partition function will have a runtime of O(n). forEach and filter both have linear, O(n), time complexity. Although our fancy partition does filter twice, this is a constant we drop, O(2n) = O(n). Linear time is fast so we are quite happy with partition.
 
 We won't be using an explicit partition helper function in our quickSort implementation, however we will borrow heavily from this pattern. As you design algorithms, it helps to think about key patterns in isolation, although your solution may not feature that exact helper. Some would say we like to divide and conquer :).
+
+#### **Quick Sort Recursion**
+
+Let's begin structuring the recursion. The base case of any recursive problem is where the input is so trivial, we immediately know the answer without calculation. If our problem is to sort an array, what is the trivial array? An array of 1 or 0 elements! Let's establish the code:
+```js
+function quickSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+    // ...
+}
+```
+
+If our base case pretains to an array of a very small size, then the design of our recursive case should make progress toward hitting this base scenario. In other words, we should recursively call quickSort on smaller and smaller arrays. This is very similar to our previous mergeSort, except we don't just split the array down the middle. Instead we should arbitrarily choose an element of the array as a pivot and partition the remaining elements relative to this pivot:
+```js
+function quickSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let pivot = array.shift();
+    let left = array.filter(el => el < pivot);
+    let right = array.filter(el => el >= pivot);
+    // ...
+```
+
+Here is what to notice about the parition step above: 1. the pivot is an element of the array; we arbitrarily chose the first element 2. we removed the pivot from the master array before we filter into the left and right partitions
+
+Now that we have the two subarrays of left and right we have our subproblems! To solve these subproblems we must sort the subarrays. I wish we had a function that sorts an array...oh wait we do, quickSort! Recursively:
+```js
+function quickSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let pivot = array.shift();
+    let left = array.filter(el => el < pivot);
+    let right = array.filter(el => el >= pivot);
+
+    let leftSorted = quickSort(left);
+    let rightSorted = quickSort(right);
+    // ...
+```
+
+Okay, so we have the two sorted partitions. This means we have the two subsolutions. But how do we put them together? Think about how we partitioned them in the first place. Everything in leftSorted is guaranteed to be less than everything in rightSorted. On top of that, pivot should be placed after the last element in leftSorted, but before the first element in rightSorted. So all we need to do is to combine the elements in the order "left, pivot, right"!
+```js
+function quickSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let pivot = array.shift();
+    let left = array.filter(el => el < pivot);
+    let right = array.filter(el => el >= pivot);
+
+    let leftSorted = quickSort(left);
+    let rightSorted = quickSort(right);
+
+    return leftSorted.concat([pivot]).concat(rightSorted);
+}
+```
+
+That last concat line is a bit clunky. Bonus JS Lesson: we can use the spread ... operator to elegantly concat arrays. In general:
+```js
+let one = ['a', 'b']
+let two = ['d', 'e', 'f']
+let newArr = [ ...one, 'c', ...two  ];
+newArr; // =>  [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+```
+
+Utilizing that spread pattern gives us this final implementation:
+```js
+function quickSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let pivot = array.shift();
+    let left = array.filter(el => el < pivot);
+    let right = array.filter(el => el >= pivot);
+
+    let leftSorted = quickSort(left);
+    let rightSorted = quickSort(right);
+
+    return [ ...leftSorted, pivot, ...rightSorted ];
+}
+```
