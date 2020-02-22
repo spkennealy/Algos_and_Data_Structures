@@ -373,3 +373,8 @@ function quickSort(array) {
     return [ ...leftSorted, pivot, ...rightSorted ];
 }
 ```
+
+### **Time and Space Complexity Analysis**
+
+The complexity analysis of this algorithm is easier to explain through visuals, so we highly encourage you to watch the lecture that accompanies this reading. In any case, here is a summary of the complexity.
+
