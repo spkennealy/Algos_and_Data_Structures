@@ -391,7 +391,11 @@ The runtime analysis of quickSort is more complex than mergeSort
 * The parition step occurs in every recursive call, so our total complexities are:
     * Best Case: O(n * log(n))
     * Worst Case: O(n2)
-    
+
 Although we typically take the worst case when describing Big-O for an algorithm, much research on quickSort has shown the worst case to be an exceedingly rare occurance even if we choose the pivot at random. Because of this we still consider quickSort an efficient algorithm. This is a common interview talking point, so you should be familiar with the relationship between the choice of pivot and efficiency of the algorithm.
 
-Just in case: A somewhat common question a student may ask when studying quickSort is, "If the median is the best pivot, why don't we always just choose the median when we partition?" Don't overthink this. To know the median of an array, it must be sorted in the first place.
+Just in case: A somewhat common question a student may ask when studying quickSort is, "If the median is the best pivot, why don't we always just choose the median when we partition?" Don't overthink this. To know the median of an array, it must be sorted in the first place.]
+
+#### **Space Complexity**
+
+Our implementation of quickSort uses O(n) space because of the partition arrays we create. There is an in-place version of quickSort that uses O(log(n)) space. O(log(n)) space is not huge benefit over O(n). You'll also find our version of quickSort as easier to remember, easier to implement. Just know that a O(logn) space quickSort exists.
