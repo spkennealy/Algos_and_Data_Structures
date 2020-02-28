@@ -405,3 +405,12 @@ Our implementation of quickSort uses O(n) space because of the partition arrays 
 * When constant space is important to you, use the in-place version. This will of course trade off some simplicity of implementation.
 
 If you know some constraints about dataset you can make some modifications to optimize pivot choice. Here's some food for thought. Our implementation of quickSort will always take the first element as the pivot. This means we will suffer from the worst case time complexity in the event that we are given an already sorted array (ironic isn't it?). If you know your input data to be mostly already sorted, randomize the choice of pivot - this is a very easy change. Bam. Solved like a true engineer.
+
+
+## Radix Sort Notes
+
+Radix Sort is a non-comparison, integer sorting algorithm. Its time complexity is superior to every other sorting algorithm we've encountered thus far, but it can only be used in the special case where we are strictly sorting integer data.
+
+Radix Sort is most often used on lists of binary numbers, but that doesn't mean that its only application is to sort cryptic machine code! All sorts of data can be converted into binary format before being processed, including long strings of text and image data. Regardless of the type of data we'd like to sort, it is critical that all data be converted to binary (or some other integer representation) before Radix Sort is invoked.
+
+But have no fear! For the sake of simplicity, we'll be exploring Radix Sort while working with standard base 10 integers, rather than with binary numbers.
