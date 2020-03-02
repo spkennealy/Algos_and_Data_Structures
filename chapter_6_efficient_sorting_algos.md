@@ -431,7 +431,8 @@ Radix sort is actually pretty simple. Given a list of integers:
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-1.png)
 
-Step 1:
+**Step 1:**
+
 First, we create ten buckets, each representing a single digit from 0-9:
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-2.png)
@@ -455,3 +456,17 @@ NOTE: The integers in each bucket need not be sorted! We are simply grouping int
 Finally, we create new list by extracting each number from the buckets, 0-9, in the order which they appear. Now we have a list of numbers sorted by their last digit only!
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-4_5.png)
+
+**Step 2:**
+
+If there are any integers in our input that have two or more digits, we must repeat this process for the 10's place.
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-5.png)
+
+If an integer doesn't have a digit in the 10's place (e.g. 3 or 7), we consider that integer's 10's place digit to be 0.
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-6.png)
+
+Now we have a list of numbers sorted by their last two digits only!
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-7.png)
