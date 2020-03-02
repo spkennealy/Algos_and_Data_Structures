@@ -424,3 +424,34 @@ Claim: We can determine the relative size of an integer based on the number of d
 When working with positive numbers, we know that any 3 digit number is greater than any other 2 digit number. The individual digits themselves are irrelevant. We can write our algorithm without actually comparing any values, simply sorting based on an integer's digit-length.
 
 If we are clever, we can do the same for lists of integers that include both positive and negative numbers.
+
+### **How Does it work?**
+
+Radix sort is actually pretty simple. Given a list of integers:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-1.png)
+
+Step 1:
+First, we create ten buckets, each representing a single digit from 0-9:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-2.png)
+
+Next, we iterate across the entire list of integers, looking only at the digit in the one's place for each integer:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-3.png)
+
+* If the digit in the one's place is a 0, we add that integer to the 0 bucket.
+* If the digit in the one's place is a 1, we add that integer to the 1 bucket.
+* If the digit in the one's place is a 2, we add that integer to the 2 bucket.
+* ...
+* If the digit in the one's place is a 9, we add that integer to the 9 bucket.
+
+After we've addressed all integers in the list, we wind up with something like this:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-4.png)
+
+NOTE: The integers in each bucket need not be sorted! We are simply grouping integers by their one's place digit.
+
+Finally, we create new list by extracting each number from the buckets, 0-9, in the order which they appear. Now we have a list of numbers sorted by their last digit only!
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-4_5.png)
