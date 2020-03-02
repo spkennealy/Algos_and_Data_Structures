@@ -470,3 +470,21 @@ If an integer doesn't have a digit in the 10's place (e.g. 3 or 7), we consider 
 Now we have a list of numbers sorted by their last two digits only!
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-7.png)
+
+**Step 3:**
+
+If there are any integers in our input that have three or more digits, we must repeat this process for the 100's place.
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-8.png)
+
+If an integer doesn't have a digit in the 100's place (e.g. 33 or 77), we consider that integer's 100's place digit to be 0.
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-9.png)
+
+Now we have a list of numbers sorted by their last three digits only!
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/Radix-Sort-10.png)
+
+This process continues until we have addressed all digits of the largest integer in our list.
+
+NOTE: Not a single logical comparison (===, !==, >, <, >=, <=, etc.) was made. We completed our process exclusively by exploiting a special property of the given data type (integers).
