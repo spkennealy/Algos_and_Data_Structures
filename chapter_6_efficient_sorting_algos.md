@@ -488,3 +488,11 @@ Now we have a list of numbers sorted by their last three digits only!
 This process continues until we have addressed all digits of the largest integer in our list.
 
 NOTE: Not a single logical comparison (===, !==, >, <, >=, <=, etc.) was made. We completed our process exclusively by exploiting a special property of the given data type (integers).
+
+**Final Step:**
+
+Return the final copy of your list. It's sorted!
+
+See if you can observe the behavior described above in the following animation:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/RadixSort.gif)
