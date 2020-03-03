@@ -496,3 +496,21 @@ Return the final copy of your list. It's sorted!
 See if you can observe the behavior described above in the following animation:
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/radix_sort/images/RadixSort.gif)
+
+### **Implementation:**
+
+In order to implement Radix Sort, there are some basic questions we'll need to answer. Since we'll need to answer them repeatedly throughout our algorithm, we can abstract the process of answering each question out into a set of helper functions.
+
+| **Helper Function**      | **Question**                                                | **Returns** |
+|--------------------------|-------------------------------------------------------------|-------------|
+| getDigitFrom(num, place) | What digit is at the given `place` value in `num`?          | integer     |
+| getIntLength(num)        | How many digits are in `num`?                               | integer     |
+| getMaxDigits(nums)       | How many digits does the integer with the most digits have? | integer     |
+
+These methods are rather math-oriented, and are all considered "already-solved-problems". In an interview setting, if delivered with confidence, it would be fair to state that you would have pre-defined these helper functions before beginning the task of implementing Radix Sort, and as long as you denote their names, inputs, and outputs, you can probably get away with avoiding implementing them entirely.
+
+This saves you a lot of time in getting to the real meat of the problem, and helps you avoid looking silly as you stumble over the math.
+
+However, if you like a good math problem and would like to attempt implementing these functions on your own, by all means, stop here and do so in your own editor!
+
+Just don't continue until you're finished, because the solutions to these helper functions are coming up next.
