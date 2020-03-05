@@ -529,3 +529,10 @@ The Math:
 * Divide by Math.pow(10, i) to divide integer by it's place value, 10place.
 * Floor to round away any decimals.
 * Mod 10 to get the digit of interest.
+
+`getIntLength`
+* We need to know the number of digits of the largest number in our list.
+    * This is how we know how many times to run through or algorithmic process; how many times to bucket and unbucket our numbers.
+```js
+const getIntLength = (num) => (num === 0) ? 1 : Math.floor(Math.log10(Math.abs(num))) + 1;
+```
