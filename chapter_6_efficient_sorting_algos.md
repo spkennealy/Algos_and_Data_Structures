@@ -514,3 +514,18 @@ This saves you a lot of time in getting to the real meat of the problem, and hel
 However, if you like a good math problem and would like to attempt implementing these functions on your own, by all means, stop here and do so in your own editor!
 
 Just don't continue until you're finished, because the solutions to these helper functions are coming up next.
+
+### **Radix Sort Helper Function Solutions**
+
+The following code provides is the solutions to `getDigitFrom`. `getIntLength`, and `getMaxDigits`:
+
+`getDigitFrom`
+```js
+const getDigitFrom = (num, place) => Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;;
+```
+
+The Math:
+* Absolute value to avoid getting back negative digits.
+* Divide by Math.pow(10, i) to divide integer by it's place value, 10place.
+* Floor to round away any decimals.
+* Mod 10 to get the digit of interest.
