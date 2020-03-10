@@ -536,3 +536,16 @@ The Math:
 ```js
 const getIntLength = (num) => (num === 0) ? 1 : Math.floor(Math.log10(Math.abs(num))) + 1;
 ```
+
+`getMaxDigits`
+```js
+function getMaxDigits(nums) {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, getIntLength(nums[i]));
+  }
+  return maxDigits;
+}
+```
+
+Now that we've got those out of the way, it's time to implement Radix Sort!
