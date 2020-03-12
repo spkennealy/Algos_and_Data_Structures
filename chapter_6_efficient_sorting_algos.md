@@ -618,3 +618,9 @@ However, there is actually some debate in the computer science community over th
 If this is true, the absolute worst case scenario becomes the case where the length of the longest integer in the input array, k, is equal to (or greater than) the total number of elements in the array, n. In this scenario, we wind up with an O(n log(k)), or approximately O(n log(n)), run time, making Radix Sort, at worst, equal in speed to our fastest comparison-based sorting algorithm.
 
 Though it will require some additional research, this may be a worthwhile talking point in an interview setting!
+
+#### **Space Complexity**
+
+Radix Sort is an O(n + k) space algorithm.
+
+The amount of memory consumed by the algorithm increases relative to both the size of the input array and the length of the longest integer.
