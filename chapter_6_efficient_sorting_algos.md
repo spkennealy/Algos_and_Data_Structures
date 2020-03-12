@@ -624,3 +624,12 @@ Though it will require some additional research, this may be a worthwhile talkin
 Radix Sort is an O(n + k) space algorithm.
 
 The amount of memory consumed by the algorithm increases relative to both the size of the input array and the length of the longest integer.
+
+#### **When should we use Radix Sort?**
+
+You should consider using Radix sort whenever you need to:
+* Sort a list of any sort of binary data, including numeric, text, or image data in binary format.
+* Sort a list of integers, and you don't know the value of the largest element in the list.
+    * If you do know the largest element in the list, see countingSort!
+
+Radix Sort's run time, O(n * k), is depedendent on the length (number of digits) of the largest integer in the input, k. For this reason, it is fastest when k is relatively small.
