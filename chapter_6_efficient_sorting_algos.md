@@ -633,3 +633,8 @@ You should consider using Radix sort whenever you need to:
     * If you do know the largest element in the list, see countingSort!
 
 Radix Sort's run time, O(n * k), is depedendent on the length (number of digits) of the largest integer in the input, k. For this reason, it is fastest when k is relatively small.
+
+
+## Counting Sort
+
+Counting Sort is another non-comparison, integer sorting algorithm. Just like Radix Sort, its time complexity is superior to every other comparison-based sorting algorithm we've encountered thus far, but it can only be used in the special case where we are sorting integer data. Additionally, we must know the largest interger value in the input array (which we'll refer to as k) prior to beginning our sort. (Or...we must be willing to take the time to search for it first.)
