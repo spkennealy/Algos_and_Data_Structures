@@ -652,3 +652,18 @@ If we're going to use an array as a counting device, and that array must have on
 However, if we are clever, we can adapt our strategy to work with an input that contains negative integers as well. With just a little extra preliminary information - the smallest integer in the input array - we can allocate largest - smallest (where smallest is negative) elements to our counter array upon initialization, remembering that our counter array's indices now represent values that are offset by Math.abs(smallest).
 
 For simplicity, and to get the base algorithm down, let's just assume our input has all positive integers for now.
+
+### **Implementation - How does it work?**
+
+Counting Sort works by allocating an array of counters k elements long, where k is the largest integer in our input. Upon initialization, we set each element of the new counter array to zero. As long as k is not giant, this will be fine for our purposes.
+
+After allocating an array of counters, we iterate across the input array. As we approach each integer, we increment the counter at the index that is equal to the number we have just approached in our input by one.
+
+For example, if the integer we've approached in the input array is 5, we count it by incrementing the value at `i = 5` in our counter array by 1. In this way, we keep track of the number of occurences of each integer in our input array, and we do it in ascending order!
+
+When we're finished counting, we iterate across the counters array. For each non-zero value we find, we push that number of the current counters index, `i`, to our output array.
+
+Finally, we return the output array, which should now contain each of our input array's elements in ascending order. If you'd prefer to sort in descending order, simply iterate through the counters array backwards and follow the same process.
+
+See if you can observe the behavior described above in the following animation:
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/counting_sort/images/CountingSort.gif)
