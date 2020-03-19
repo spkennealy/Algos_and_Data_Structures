@@ -667,3 +667,26 @@ Finally, we return the output array, which should now contain each of our input 
 
 See if you can observe the behavior described above in the following animation:
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/efficient_sorting_algorithms/counting_sort/images/CountingSort.gif)
+
+### **Counting Sort JavaScript Implementation**
+
+The following code is the solution to countingSort for input arrays containing only positive integers:
+```js
+function countingSort(arr, max) {
+  const result = [];
+  const counters = new Array(max + 1).fill(0);
+
+  for (let i = 0; i < arr.length; i++) {
+    counters[arr[i]]++;
+  }
+
+  for (let i = 0; i < counters.length; i++) {
+    while (counters[i] > 0) {
+      result.push(i);
+      counters[i]--;
+    }
+  }
+
+  return result;
+}
+```
