@@ -690,3 +690,11 @@ function countingSort(arr, max) {
   return result;
 }
 ```
+
+### **Time and Space Complexity Analysis**
+
+#### **Time Complexity**
+
+In general, the best, average, and worst case time complexities of Counting Sort are all the same.
+
+Since this algorithm requires iterating over all n elements of the input array, and then subsequently iterating over our each element of our counter array (which has length k), we wind up with a run time of O(n + k). This makes Counting Sort faster than any of the previous comparison-based algorithms, and also faster than Radix Sort!
