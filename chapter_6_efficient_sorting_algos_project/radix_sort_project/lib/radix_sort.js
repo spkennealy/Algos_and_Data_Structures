@@ -3,7 +3,20 @@ function radixSort(arr) {
         return null;
     }
 
+    let maxDigits = getMaxDigits(arr);
+
+    for (let k = 0; k < maxDigits; k++) {
+        let buckets = Array.from({length: 10}, () => []);
+
+        for (let i = 0; i < arr.length; i++) {
+            let digit = getDigitFrom(arr[i], k);
+            buckets[digit].push(arr[i]);
+        }
+
+        arr = [].concat(...buckets);
+    }
     
+    return arr;
 }
 
 const getDigitFrom = (num, place) => Math.floor(Math.abs(num)) / Math.pow(10, place) % 10;
