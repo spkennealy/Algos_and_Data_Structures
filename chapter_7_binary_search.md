@@ -26,3 +26,16 @@ binarySearch([5, 10, 12, 15, 20, 30, 70], 24);  // => false
 ```
 
 Before we move on, really internalize the fact that binarySearch will only work on sorted arrays! Obviously we can search any array, sorted or unsorted, in O(n) time. But now our goal is be able to search the array with a sub-linear time complexity (less than O(n)).
+
+### **Binary Search Recursion**
+
+We'll implement binary search recursively. As always, we start with a base case that captures the scenario of the input array being so trivial, that we know the answer without further calculation. If we are given an empty array and a target, we can be certain that the target is not inside of the array:
+```js
+function binarySearch(array, target) {
+    if (array.length === 0) {
+        return false;
+    }
+    // ...
+}
+```
+
