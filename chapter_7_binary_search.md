@@ -11,3 +11,18 @@ Think of a dictionary. A dictionary contains alphabetically sorted words and the
 * ...
 
 You are essentially using the binarySearch algorithm in the real world.
+
+## The Algorithm: "check the middle and half the search space"
+
+Formally, our binarySearch will seek to solve the following problem:
+```js
+/// Given a sorted array of numbers and a target num, return a boolean indicating whether or not that target is contained in the array.
+```
+
+Programmatically, we want to satisfy the following behavior:
+```js
+binarySearch([5, 10, 12, 15, 20, 30, 70], 12);  // => true
+binarySearch([5, 10, 12, 15, 20, 30, 70], 24);  // => false
+```
+
+Before we move on, really internalize the fact that binarySearch will only work on sorted arrays! Obviously we can search any array, sorted or unsorted, in O(n) time. But now our goal is be able to search the array with a sub-linear time complexity (less than O(n)).
