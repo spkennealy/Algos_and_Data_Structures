@@ -97,3 +97,26 @@ function binarySearch(array, target) {
 ```
 
 To wrap up, we have confidence of our base case will eventually be hit because we are continually halving the array. We halve the array until it's length is 0 or we actually find the target.
+
+## Binary Search JS Implementation
+Here is the code again for your quick reference:
+```js
+function binarySearch(array, target) {
+    if (array.length === 0) {
+        return false;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx + 1);
+
+    if (target < array[midIdx]) {
+        return binarySearch(leftHalf, target);
+    } else if (target > array[midIdx]) {
+        return binarySearch(rightHalf, target);
+    } else {
+        return true;
+    }
+}
+```
+
