@@ -132,3 +132,6 @@ The complexity analysis of this algorithm is easier to explain through visuals, 
     * the length would halve as `8 -> 4 -> 2 -> 1`
     * it takes 3 calls, `log(8) = 3`
 
+### **Space Complexity: O(n)**
+
+Our implementation uses n space due to half arrays we create using slice. Note that JavaScript slice creates a new array, so it requires additional memory to be allocated.
