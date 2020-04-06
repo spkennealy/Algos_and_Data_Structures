@@ -120,3 +120,15 @@ function binarySearch(array, target) {
 }
 ```
 
+## Time and Space Complexity Analysis
+
+The complexity analysis of this algorithm is easier to explain through visuals, so we highly encourage you to watch the lecture that accompanies this reading. In any case, here is a summary of the complexity:
+
+### **Time Complexity: O(log(n))**
+* `n` is the length of the input array
+* We have no loops, so we must only consider the number of recursive calls it takes to hit the base case
+* The number of recursive calls is the number of times we must halve the array until it's length becomes 0. This number can be described by `log(n)`
+    * for example, say we had an array of 8 elements, `n = 8`
+    * the length would halve as `8 -> 4 -> 2 -> 1`
+    * it takes 3 calls, `log(8) = 3`
+
