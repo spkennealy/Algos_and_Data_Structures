@@ -39,3 +39,61 @@ function binarySearch(array, target) {
 }
 ```
 
+Now for our recursive case. If we want to get a time complexity less than O(n), we must avoid touching all n elements. Adopting our dictionary strategy, let's find the middle element and grab references to the left and right halves of the sorted array:
+```js
+function binarySearch(array, target) {
+    if (array.length === 0) {
+        return false;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx + 1);
+    // ...
+}
+```
+
+It's worth pointing out that the left and right halves do not contain the middle element we chose.
+
+Here is where we leverage the sorted property of the array. If the target is less than the middle, then the target must be in the left half of the array. If the target is greater than the middle, then the target must be in the right half of the array. So we can narrow our search to one of these halves, and ignore the other. Luckily we have a function that can search the half, its binarySearch:
+```js
+function binarySearch(array, target) {
+    if (array.length === 0) {
+        return false;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx + 1);
+
+    if (target < array[midIdx]) {
+        return binarySearch(leftHalf, target);
+    } else if (target > array[midIdx]) {
+        return binarySearch(rightHalf, target);
+    }
+    // ...
+}
+```
+
+We know binarySeach will return the correct boolean, so we just pass that result up by returning it ourselves. However, something is lacking in our code. It is only possible to get a false from the literal return false line, but there is no return true. Looking at our conditionals, we handle the cases where the target is less than middle or the target is greater than the middle, but what if the product is equal to the middle? If the target is equal to the middle, then we found the target and should return true! This is easy to add with an else:
+```js
+function binarySearch(array, target) {
+    if (array.length === 0) {
+        return false;
+    }
+
+    let midIdx = Math.floor(array.length / 2);
+    let leftHalf = array.slice(0, midIdx);
+    let rightHalf = array.slice(midIdx + 1);
+
+    if (target < array[midIdx]) {
+        return binarySearch(leftHalf, target);
+    } else if (target > array[midIdx]) {
+        return binarySearch(rightHalf, target);
+    } else {
+        return true;
+    }
+}
+```
+
+To wrap up, we have confidence of our base case will eventually be hit because we are continually halving the array. We halve the array until it's length is 0 or we actually find the target.
