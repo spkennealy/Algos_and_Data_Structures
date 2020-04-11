@@ -51,3 +51,24 @@ In reality, in the actual hardware of your machine, whether it be in disk or in 
 For this reason, Linked List Nodes have no indices, and no random access. Without random access, we do not have the ability to look up an individual Linked List Node in constant time. Instead, to find a particular Node, we have to start at the very first Node and iterate through the Linked List one node at a time, checking each Node's next Node until we find the one we're interested in.
 
 So when implementing a Linked List, we actually must implement both the Linked List class and the Node class. Since the actual data lives in the Nodes, it's simpler to implement the Node class first.
+
+## Types of Linked Lists
+
+There are four flavors of Linked List you should be familiar with when walking into your job interviews.
+
+Linked List Types:
+
+List Type	Description	Directionality
+Singly Linked	Nodes have a single pointer connecting them in a single direction.	Head→Tail
+Doubly Linked	Nodes have two pointers connecting them bi-directionally.	Head⇄Tail
+Mulitply Linked	Nodes have two or more pointers, providing a variety of potential node orderings.	Head⇄Tail, A→Z, Jan→Dec, etc.
+Circularly Linked	Final node's next pointer points to the first node, creating a non-linear, circular version of a Linked List.	Head→Tail→Head→Tail
+
+`NOTE: These Linked List types are not always mutually exclusive.`
+
+For instance:
+* Any type of Linked List can be implemented Circularly (e.g. A Circular Doubly Linked List).
+* A Doubly Linked List is actually just a special case of a Mulitply Linked List.
+* Etc.
+
+You are most likely to encounter Singly and Doubly Linked Lists in your upcoming job search, so we are going to focus exlusively on those two moving forward. However, in more senior level interviews, it is very valuable to have some familiarity with the other types of Linked Lists. Though you may not actually code them out, you will win extra points by illustrating your ability to weigh the tradeoffs of your technical decisions by discussing how your choice of Linked List type may affect the efficiency of the solutions you propose.
