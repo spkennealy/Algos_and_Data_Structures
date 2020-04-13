@@ -73,3 +73,21 @@ For instance:
 * Etc.
 
 You are most likely to encounter Singly and Doubly Linked Lists in your upcoming job search, so we are going to focus exlusively on those two moving forward. However, in more senior level interviews, it is very valuable to have some familiarity with the other types of Linked Lists. Though you may not actually code them out, you will win extra points by illustrating your ability to weigh the tradeoffs of your technical decisions by discussing how your choice of Linked List type may affect the efficiency of the solutions you propose.
+
+## Linked List Methods
+
+Linked Lists are great foundation builders when learning about data structures because they share a number of similar methods (and edge cases) with many other common data structures. You will find that many of the concepts discussed here will repeat themselves as we dive into some of the more complex non-linear data structures later on, like Trees and Graphs.
+
+In the project that follows, we will implement the following Linked List methods:
+
+| Type | Name | Description | Returns |
+| Insertion | addToTail | Adds a new node to the tail of the Linked List. | Updated Linked List |
+| Insertion | addToHead | Adds a new node to the head of the Linked List. | Updated Linked List |
+| Insertion | insertAt | Inserts a new node at the "index", or position, specified. | Boolean |
+| Deletion | removeTail | Removes the node at the tail of the Linked List. | Removed node |
+| Deletion | removeHead | Removes the node at the head of the Linked List. | Removed node |
+| Deletion | removeFrom | Removes the node at the "index", or position, specified. | Removed node |
+| Search | contains | Searches the Linked List for a node with the value specified. | Boolean |
+| Access | get | Gets the node at the "index", or position, specified. | Node at index |
+| Access | set | Updates the value of a node at the "index", or position, specified. | Boolean |
+| Meta | size | Returns the current size of the Linked List. | Integer |
