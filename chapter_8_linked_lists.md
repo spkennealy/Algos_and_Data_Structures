@@ -91,3 +91,15 @@ In the project that follows, we will implement the following Linked List methods
 | Access | get | Gets the node at the "index", or position, specified. | Node at index |
 | Access | set | Updates the value of a node at the "index", or position, specified. | Boolean |
 | Meta | size | Returns the current size of the Linked List. | Integer |
+
+## Time and Space Complexity Analysis
+
+Before we begin our analysis, here is a quick summary of the Time and Space constraints of each Linked List Operation. The complexities below apply to both Singly and Doubly Linked Lists:
+
+| Data Structure Operation | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity (Worst) |
+| Access | Θ(n) | O(n) | O(n) |
+| Search | Θ(n) | O(n) | O(n) |
+| Insertion | Θ(1) | O(1) | O(n) |
+| Deletion | Θ(1) | O(1) | O(n) |
+
+Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
