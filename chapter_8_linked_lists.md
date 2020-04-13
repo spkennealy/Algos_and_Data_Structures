@@ -58,11 +58,12 @@ There are four flavors of Linked List you should be familiar with when walking i
 
 Linked List Types:
 
-List Type	Description	Directionality
-Singly Linked	Nodes have a single pointer connecting them in a single direction.	Head→Tail
-Doubly Linked	Nodes have two pointers connecting them bi-directionally.	Head⇄Tail
-Mulitply Linked	Nodes have two or more pointers, providing a variety of potential node orderings.	Head⇄Tail, A→Z, Jan→Dec, etc.
-Circularly Linked	Final node's next pointer points to the first node, creating a non-linear, circular version of a Linked List.	Head→Tail→Head→Tail
+| List Type | Description | Directionality |
+|--------------|-----------|-----------|
+| Singly Linked | Nodes have a single pointer connecting them in a single direction. | Head→Tail |
+| Doubly Linked | Nodes have two pointers connecting them bi-directionally. | Head⇄Tail |
+| Mulitply Linked | Nodes have two or more pointers, providing a variety of potential node orderings. | Head⇄Tail, A→Z, Jan→Dec, etc. |
+| Circularly Linked | Final node's next pointer points to the first node, creating a non-linear, circular version of a Linked List. | Head→Tail→Head→Tail |
 
 `NOTE: These Linked List types are not always mutually exclusive.`
 
