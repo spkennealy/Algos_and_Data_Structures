@@ -118,3 +118,7 @@ Unlike Arrays, Linked Lists Nodes are not stored contiguously in memory, and the
 In Scenario 1, we'll know we're there because we've iterated 8 times. In Scenario 2, we'll know we're there because, while iterating, we've checked each node's value and found one that matches our target value, "Q".
 
 In the worst case scenario, we may have to traverse the entire Linked List until we arrive at the final node. This makes both Access & Search Linear Time operations.
+
+### NOTE:
+
+Linked Lists can be traversed both iteratively and recursively. If you choose to traverse a Linked List recursively, there will be a recursive function call added to the call stack for every node in the Linked List. Even if you're provided the Linked List, as in Scenario 1, you will still use Linear Space in the call stack, and that counts.
