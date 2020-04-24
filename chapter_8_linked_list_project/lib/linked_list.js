@@ -90,7 +90,14 @@ class LinkedList {
 
     // TODO: Implement the removeHead method here
     removeHead() {
+        if (this.head == null) return undefined;
 
+        let next = this.head.next;
+        this.head = next;
+        this.length--;
+        if (this.length == 0) this.tail = null;
+
+        return this;
     }
 
     // TODO: Implement the contains method here
