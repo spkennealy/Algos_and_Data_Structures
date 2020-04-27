@@ -125,7 +125,13 @@ class LinkedList {
 
     // TODO: Implement the set method here
     set(index, val) {
-
+        let foundNode = this.get(index);
+        if (foundNode) {
+            foundNode.val = val;
+            return true;
+        }
+        
+        return false;
     }
 
     // TODO: Implement the insert method here
