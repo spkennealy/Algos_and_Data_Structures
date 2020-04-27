@@ -136,7 +136,7 @@ class LinkedList {
 
     // TODO: Implement the insert method here
     insert(index, val) {
-        if (index < 0 || index >= this.lenght) return false;
+        if (index < 0 || index >= this.length) return false;
         if (index === this.length) return !!this.addToTail(val);
         if (index === 0) return !!this.addToHead(val);
 
@@ -151,7 +151,15 @@ class LinkedList {
 
     // TODO: Implement the remove method here
     remove(index) {
+        if (index < 0 || index >= this.length) return false;
+        if (index === this.length) return !!this.removeTail();
+        if (index === 0) return !!this.removeHead();
 
+        const prev = this.get(index - 1);
+        const next = prev.next.next;
+        prev.next = next;
+        this.length--;
+        return true;
     }
 
     // TODO: Implement the size method here
