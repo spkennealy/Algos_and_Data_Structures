@@ -164,7 +164,7 @@ class LinkedList {
 
     // TODO: Implement the size method here
     size() {
-
+        return this.length;
     }
 }
 
