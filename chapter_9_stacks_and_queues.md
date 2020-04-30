@@ -21,3 +21,17 @@ If you can imagine adding items to, or removing items from, a Stack of...literal
 We add things to the top of a stack. We remove things from the top of a stack. We never add things to, or remove things from, the bottom of the stack. That's just crazy.
 
 Note: We can use JavaScript Arrays to implement a basic stack. Array#push adds to the top of the stack and Array#pop will remove from the top of the stack. In the exercise that follows, we'll build our own Stack class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a stack.
+
+## What is a Queue?
+
+Queues are a First In First Out (FIFO) data structure. The first Node added to the queue is always the first Node to be removed.
+
+The name Queue comes from this characteristic, as it is helpful to visualize this data structure as a horizontal line of items with a beginning and an end. Personally, I like to think of a Queue as the line one waits on for an amusement park, at a grocery store checkout, or to see the teller at a bank.
+
+If you can imagine a queue of humans waiting...again, for literally anything...you'll realize that most people (the civil ones) naturally obey the FIFO rule.
+
+People add themselves to the back of a queue, wait their turn in line, and make their way toward the front. People exit from the front of a queue, but only when they have made their way to being first in line.
+
+We never add ourselves to the front of a queue (unless there is no one else in line), otherwise we would be "cutting" the line, and other humans don't seem to appreciate that.
+
+Note: We can use JavaScript Arrays to implement a basic queue. Array#push adds to the back (enqueue) and Array#shift will remove from the front (dequeue). In the exercise that follows, we'll build our own Queue class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a queue.
