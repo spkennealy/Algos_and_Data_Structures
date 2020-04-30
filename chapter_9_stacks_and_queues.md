@@ -35,3 +35,17 @@ People add themselves to the back of a queue, wait their turn in line, and make 
 We never add ourselves to the front of a queue (unless there is no one else in line), otherwise we would be "cutting" the line, and other humans don't seem to appreciate that.
 
 Note: We can use JavaScript Arrays to implement a basic queue. Array#push adds to the back (enqueue) and Array#shift will remove from the front (dequeue). In the exercise that follows, we'll build our own Queue class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a queue.
+
+## Stack and Queue Properties
+
+Stacks and Queues are so similar in composition that we can discuss their properties together. They track the following three properties:
+
+*Stack Properties | Queue Properties:*
+
+| **Stack Property** | **Description** | **Queue** **Property** | **Description** |
+|--------|------------|------------------------|-----------|
+| top | The first node in the Stack | front | The first node in the Queue |
+| bottom | The last node in the Stack. (Optional) | back | The last node in the Queue. |
+| length | The number of nodes in the Stack; the Stack's length. | length | The number of nodes in the Queue; the Queue's length. | 
+
+Notice that rather than having a head and a tail like Linked Lists, Stacks have a top and a bottom, and Queues have a front and a back instead. These properties are essentially the same; pointers to the end points of the respective List ADT where important actions way take place. The differences in naming conventions are strictly for human comprehension.
