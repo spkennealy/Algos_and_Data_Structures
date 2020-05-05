@@ -118,3 +118,13 @@ class Stack {
   }
 }
 ```
+
+## Queue Methods
+
+In the exercise that follows, we will implement a Queue data structure along with the following Queue methods:
+
+| Type | Name | Description | Returns |
+|--------|------------|------------------------|-----------|
+| Insertion | enqueue | Adds a Node to the front of the Queue. | Integer - New size of Queue |
+| Deletion | dequeue | Removes a Node from the front of the Queue. | Node removed from front of Queue |
+| Meta | size | Returns the current size of the Queue. | Integer |
