@@ -128,3 +128,53 @@ In the exercise that follows, we will implement a Queue data structure along wit
 | Insertion | enqueue | Adds a Node to the front of the Queue. | Integer - New size of Queue |
 | Deletion | dequeue | Removes a Node from the front of the Queue. | Node removed from front of Queue |
 | Meta | size | Returns the current size of the Queue. | Integer |
+
+## Queue JavaScript Implementation
+
+The following code is the preferred implementation of a Queue ADT:
+```js
+class Node {
+  constructor(val) {
+    this.value = val;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.front = null;
+    this.back = null;
+    this.length = 0;
+  }
+
+  enqueue(val) {
+    const newNode = new Node(val);
+    if(!this.front) {
+      this.front = newNode;
+      this.back = newNode;
+    } else {
+      this.back.next = newNode;
+      this.back = newNode;
+    }
+    return ++this.length;
+  }
+
+  dequeue() {
+    if (!this.front) {
+      return null;
+    }
+    const temp = this.front;
+    if (this.front === this.back) {
+      this.back = null;
+    }
+    this.front = this.front.next;
+    this.length--;
+    return temp.value; 
+  }
+
+  size() {
+    return this.length;
+  }
+}
+```
+
