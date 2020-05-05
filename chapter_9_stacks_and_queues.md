@@ -54,7 +54,17 @@ Similarly to Linked Lists, the values stored inside a Stack or a Queue are actua
 
 *Stack & Queue Node Properties:*
 
-| Property | Description |
+| **Property** | **Description** |
 |--------|------------|
 | value | The actual value this node represents. |
 | next | The next node in the Stack (relative to this node). |
+
+## Stack Methods
+
+In the exercise that follows, we will implement a Stack data structure along with the following Stack methods:
+
+| **Type** | **Name** | **Description** | **Returns** |
+|--------|------------|------------------------|-----------|
+| Insertion | push | Adds a Node to the top of the Stack. | Integer - New size of stack |
+| Deletion | pop | Removes a Node from the top of the Stack. | Node removed from top of Stack |
+| Meta | size | Returns the current size of the Stack. | Integer |
