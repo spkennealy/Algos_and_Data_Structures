@@ -49,3 +49,12 @@ Stacks and Queues are so similar in composition that we can discuss their proper
 | length | The number of nodes in the Stack; the Stack's length. | length | The number of nodes in the Queue; the Queue's length. | 
 
 Notice that rather than having a head and a tail like Linked Lists, Stacks have a top and a bottom, and Queues have a front and a back instead. These properties are essentially the same; pointers to the end points of the respective List ADT where important actions way take place. The differences in naming conventions are strictly for human comprehension.
+
+Similarly to Linked Lists, the values stored inside a Stack or a Queue are actually contained within Stack Node and Queue Node instances. Stack, Queue, and Singly Linked List Nodes are all identical, but just as a reminder and for the sake of completion, these List Nodes track the following two properties:
+
+*Stack & Queue Node Properties:*
+
+| Property | Description |
+|--------|------------|
+| value | The actual value this node represents. |
+| next | The next node in the Stack (relative to this node). |
