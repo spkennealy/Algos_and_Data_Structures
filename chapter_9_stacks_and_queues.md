@@ -199,3 +199,11 @@ Search and Access are both linear time operations for Stacks and Queues, and tha
 
 This is a linear time operation, O(n).
 
+### Time Complexity - Insertion and Deletion:
+
+For Stacks and Queues, insertion and deletion is what it's all about. If there is one feature a Stack absolutely must have, it's constant time insertion and removal to and from the top of the Stack (FIFO). The same applies for Queues, but with insertion occuring at the back and removal occuring at the front (LIFO).
+
+Think about it. When you add a plate to the top of a stack of plates, do you have to iterate through all of the other plates first to do so? Of course not. You simply add your plate to the top of the stack, and that's that. The concept is the same for removal.
+
+Therefore, Stacks and Queues have constant time Insertion and Deletion via their push and pop or enqueue and dequeue methods, O(1).
+
