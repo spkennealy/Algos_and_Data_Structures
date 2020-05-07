@@ -190,3 +190,12 @@ Before we begin our analysis, here is a quick summary of the Time and Space cons
 | Deletion | Θ(1) | O(1) | O(n) |
 
 Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
+
+### Time Complexity - Access and Search:
+
+When the Stack ADT was first conceived, its inventor definitely did not prioritize searching and accessing individual Nodes or values in the list. The same idea applies for the Queue ADT. There are certainly better data structures for speedy search and lookup, and if these operations are a priority for your use case, it would be best to choose something else!
+
+Search and Access are both linear time operations for Stacks and Queues, and that shouldn't be too unclear. Both ADTs are nearly identical to Linked Lists in this way. The only way to find a Node somewhere in the middle of a Stack or a Queue, is to start at the top (or the back) and traverse downward (or forward) toward the bottom (or front) one node at a time via each Node's next property.
+
+This is a linear time operation, O(n).
+
