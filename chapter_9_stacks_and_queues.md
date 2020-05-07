@@ -178,3 +178,15 @@ class Queue {
 }
 ```
 
+## Time and Space Complexity Analysis
+
+Before we begin our analysis, here is a quick summary of the Time and Space constraints of each Stack Operation.
+
+| Data Structure Operation | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity (Worst) |
+|--------|------------|------------------------|-----------|
+| Access | Θ(n) | O(n) | O(n) |
+| Search | Θ(n) | O(n) | O(n) |
+| Insertion | Θ(1) | O(1) | O(n) |
+| Deletion | Θ(1) | O(1) | O(n) |
+
+Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
