@@ -207,3 +207,9 @@ Think about it. When you add a plate to the top of a stack of plates, do you hav
 
 Therefore, Stacks and Queues have constant time Insertion and Deletion via their push and pop or enqueue and dequeue methods, O(1).
 
+### Space Complexity:
+
+The space complexity of Stacks and Queues is very simple. Whether we are instantiating a new instance of a Stack or Queue to store a set of data, or we are using a Stack or Queue as part of a strategy to solve some problem, Stacks and Queues always store one Node for each value they receive as input.
+
+For this reason, we always consider Stacks and Queues to have a linear space complexity, O(n).
+
