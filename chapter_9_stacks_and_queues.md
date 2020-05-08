@@ -222,3 +222,12 @@ For one, Stacks and Queues can be used as intermediate data structures while imp
 For example, the implementation of the breadth-first Tree traversal algorithm takes advantage of a Queue instance, and the depth-first Graph traveral algorithm exploits the benefits of a Stack instance.
 
 Additionally, Stacks and Queues serve as the essential underlying data structures to a wide variety of applications you use all the time. Just to name a few:
+
+### Stacks:
+* The Call Stack is a Stack data structure, and is used to manage the order of function invocations in your code.
+* Browser History is often implemented using a Stack, with one great example being the browser history object in the very popular React Router module.
+* Undo/Redo functionality in just about any application. For example:
+  * When you're coding in your text editor, each of the actions you take on your keyboard are recorded by pushing that event to a Stack.
+  * When you hit cmd + z to undo your most recent action, that event is poped off the Stack, because the last event that occured should be the first one to be undone (LIFO).
+  * When you hit cmd + y to redo your most recent action, that event is pushed back onto the Stack.
+
