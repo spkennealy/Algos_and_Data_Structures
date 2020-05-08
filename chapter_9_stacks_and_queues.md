@@ -213,3 +213,12 @@ The space complexity of Stacks and Queues is very simple. Whether we are instant
 
 For this reason, we always consider Stacks and Queues to have a linear space complexity, O(n).
 
+## When should we use Stacks and Queues?
+
+At this point, we've done a lot of work understanding the ins and outs of Stacks and Queues, but we still haven't really discussed what we can use them for. The answer is actually...a lot!
+
+For one, Stacks and Queues can be used as intermediate data structures while implementing some of the more complicated data structures and methods we'll see in some of our upcoming sections.
+
+For example, the implementation of the breadth-first Tree traversal algorithm takes advantage of a Queue instance, and the depth-first Graph traveral algorithm exploits the benefits of a Stack instance.
+
+Additionally, Stacks and Queues serve as the essential underlying data structures to a wide variety of applications you use all the time. Just to name a few:
