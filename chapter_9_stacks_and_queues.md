@@ -231,3 +231,12 @@ Additionally, Stacks and Queues serve as the essential underlying data structure
   * When you hit cmd + z to undo your most recent action, that event is poped off the Stack, because the last event that occured should be the first one to be undone (LIFO).
   * When you hit cmd + y to redo your most recent action, that event is pushed back onto the Stack.
 
+### Queues:
+* Printers use a Queue to manage incoming jobs to ensure that documents are printed in the order they are received.
+* Chat rooms, online video games, and customer service phone lines use a Queue to ensure that patrons are served in the order they arrive.
+  * In the case of a Chat Room, to be admitted to a size-limited room.
+  * In the case of an Online Multi-Player Game, players wait in a lobby until there is enough space and it is their turn to be admitted to a game.
+  * In the case of a Customer Service Phone Line...you get the point.
+* As a more advanced use case, Queues are often used as components or services in the system design of a service-oriented architecture. A very popular and easy to use example of this is Amazon's Simple Queue Service (SQS), which is a part of their Amazon Web Services (AWS) offering.
+  * You would add this service to your system between two other services, one that is sending information for processing, and one that is receiving information to be processed, when the volume of incoming requests is high and the integrity of the order with which those requests are processed must be maintained.
+
