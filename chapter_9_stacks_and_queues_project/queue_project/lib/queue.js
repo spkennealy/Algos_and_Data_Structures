@@ -28,7 +28,26 @@ class Node {
 }
 
 class Queue {
+    constructor() {
+        this.front = null;
+        this.back = null;
+        this.length = 0;
+    }
 
+    enqueue(val) {
+        let newNode = new Node(val);
+
+        if (!this.length) {
+            this.front = newNode;
+            this.back = newNode;
+        } else {
+            this.back.next = newNode;
+            this.back = newNode;
+        }
+
+        this.length++;
+        return this.length;
+    }
 }
 
 exports.Node = Node;
