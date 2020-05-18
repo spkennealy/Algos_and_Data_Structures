@@ -64,6 +64,10 @@ class Stack {
         this.length--;
         return val;
     }
+
+    size() {
+        return this.length;
+    }
 }
 
 exports.Node = Node;
