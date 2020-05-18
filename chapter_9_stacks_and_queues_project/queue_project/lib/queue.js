@@ -48,6 +48,21 @@ class Queue {
         this.length++;
         return this.length;
     }
+
+    dequeue() {
+        if (!this.length) return null;
+
+        let curr = this.front;
+        if (this.length == 1) {
+            this.front = null;
+            this.back = null;
+        } else {
+            this.front = curr.next;
+        }
+
+        this.length--;
+        return curr.value;
+    }
 }
 
 exports.Node = Node;
