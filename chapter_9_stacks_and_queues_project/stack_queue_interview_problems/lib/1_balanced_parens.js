@@ -76,7 +76,28 @@
 // Let's code!
 // -----------
 function balancedParens(str) {
+    if (str.length === 0) return true;
+    let openParens = [];
+    let closeParens = [];
 
+    for (let j = 0; j < str.length; j++) {
+        if (str[j] === "{" || str[j] === "[" || str[j] === "(") {
+            openParens.push(str[j]);
+        } else if (str[j] === "}" || str[j] === "]" || str[j] === ")") {
+            closeParens.push(str[j]);
+        }
+    };
+
+    if (openParens.length != closeParens.length) return false;
+
+    for (let i = 0; i < openParens.length; i++) {
+        if (openParens[i] === "{" && closeParens[i] != "}") return false;
+        if (openParens[i] === "[" && closeParens[i] != "]") return false;
+        if (openParens[i] === "(" && closeParens[i] != ")") return false;
+    }
+
+    return true;
 }
 
 exports.balancedParens = balancedParens;
+balancedParens(")(")
