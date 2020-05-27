@@ -76,26 +76,26 @@
 // Let's code!
 // -----------
 function balancedParens(str) {
-    if (str.length === 0) return true;
-    let parens = [];
+    const parens = [];
+    const pairs = {
+        "{": "}",
+        "[": "]",
+        "(": ")"
+    };
 
-    for (let j = 0; j < str.length; j++) {
-        if (str[j] === "{" || str[j] === "[" || str[j] === "(" || str[j] === "}" 
-            || str[j] === "]" || str[j] === ")") {
-            parens.push(str[j]);
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if (pairs[char]) {
+            parens.push(char);
+        } else if (char === "}" || char === "]" || char === ")") {
+            if (pairs[parens.pop()] !== char) {
+                return false;
+            }
         }
     };
 
-    if (parens.length % 2 != 0) return false;
-
-    let end = str.length - 1;
-    let valid = true;
-
-    for (let start = 0; start < end; start++) {
-        
-    }
-
-    return valid;
+    return parens.length === 0;
 }
 
 exports.balancedParens = balancedParens;
