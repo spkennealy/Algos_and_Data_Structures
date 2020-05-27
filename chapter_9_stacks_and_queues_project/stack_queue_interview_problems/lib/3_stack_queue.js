@@ -44,8 +44,10 @@ class Stack {
 class StackQueue {
     // TODO: Implement the StackQueue class!
     constructor() {
-        this.stack1 = new Stack();
-        this.stack2 = new Stack();
+        this.inStack = new Stack();
+        this.outStack = new Stack();
+        this.front = null;
+        this.back = null;
     }
 };
 
