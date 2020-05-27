@@ -43,7 +43,10 @@ class Stack {
 
 class StackQueue {
     // TODO: Implement the StackQueue class!
-
+    constructor() {
+        this.stack1 = new Stack();
+        this.stack2 = new Stack();
+    }
 };
 
 exports.Node = Node;
