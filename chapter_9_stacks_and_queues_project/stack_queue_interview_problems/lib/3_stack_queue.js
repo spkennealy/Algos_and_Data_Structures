@@ -39,6 +39,22 @@ class Stack {
         this.bottom = null;
         this.length = 0;
     }
+
+    push(val) {
+        let newNode = new Node(val);
+
+        if (this.top) {
+            let temp = this.top;
+            newNode.next = temp;
+            this.top = newNode;
+        } else {
+            this.top = newNode;
+            this.bottom = newNode;
+        }
+
+        this.length++;
+        return this.length;
+    }
 }
 
 class StackQueue {
