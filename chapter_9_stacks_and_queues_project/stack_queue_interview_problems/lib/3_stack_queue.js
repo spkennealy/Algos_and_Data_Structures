@@ -40,19 +40,38 @@ class Stack {
         this.length = 0;
     }
 
-    push(val) {
-        let newNode = new Node(val);
-
+    push(node) {
         if (this.top) {
             let temp = this.top;
-            newNode.next = temp;
-            this.top = newNode;
+            node.next = temp;
+            this.top = node;
         } else {
-            this.top = newNode;
-            this.bottom = newNode;
+            this.top = node;
+            this.bottom = node;
         }
 
         this.length++;
+        return this.length;
+    }
+
+    pop() {
+        if (!this.top) return null;
+
+        let node = null;
+        if (this.length === 1) {
+            node = this.top;
+            this.top = null;
+            this.bottom = null;
+        } else {
+            node = this.top;
+            this.top = node.next;
+        }
+
+        this.length--;
+        return node;
+    }
+
+    size() {
         return this.length;
     }
 }
