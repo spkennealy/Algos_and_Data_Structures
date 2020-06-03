@@ -84,6 +84,21 @@ class StackQueue {
         this.front = null;
         this.back = null;
     }
+
+    enqueue(val) {
+        let newNode = new Node(val);
+
+        if (!this.front) {
+            this.front = newNode;
+            this.back = newNode;
+        } else {
+            this.back.next = newNode;
+            this.back = newNode;
+        }
+
+        this.inStack.push(new Node(newNode.value));
+        return this.size();
+    }
 };
 
 exports.Node = Node;
