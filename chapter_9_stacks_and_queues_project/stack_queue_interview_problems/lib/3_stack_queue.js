@@ -103,13 +103,19 @@ class StackQueue {
     dequeue() {
         if (this.size() < 1) return null;
 
-        let node = this.front;
         if (this.size() === 1) {
             this.front = null;
             this.back = null;
         } else {
-            this.front = node.next;
+            this.front = this.front.next;
         }
+
+        if (this.outStack.size() === 0) {
+            while (this.inStack.size() > 0) {
+                this.outStack.push(this.inStack.pop());
+            }
+        }
+        let node = this.outStack.pop();
 
         return node;
     }
