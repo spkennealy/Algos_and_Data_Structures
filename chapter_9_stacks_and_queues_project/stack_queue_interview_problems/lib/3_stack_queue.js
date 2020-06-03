@@ -119,6 +119,10 @@ class StackQueue {
 
         return node;
     }
+
+    size() {
+        return this.inStack.size() + this.outStack.size();
+    }
 };
 
 exports.Node = Node;
