@@ -99,6 +99,20 @@ class StackQueue {
         this.inStack.push(new Node(newNode.value));
         return this.size();
     }
+
+    dequeue() {
+        if (this.size() < 1) return null;
+
+        let node = this.front;
+        if (this.size() === 1) {
+            this.front = null;
+            this.back = null;
+        } else {
+            this.front = node.next;
+        }
+
+        return node;
+    }
 };
 
 exports.Node = Node;
