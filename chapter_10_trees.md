@@ -66,3 +66,13 @@ The visual representation of the tree is:
 To simplify our diagrams, we'll omit the arrowheads on the edges. Moving forward you can assume that the top node is the root and the direction of edges points downward. In other words, node A is the Root. Node A can access node B through a.left, but Node B cannot access Node A.
 
 We now have a data structure we can use to explore Binary Tree algorithms! Creating a tree in this way may be tedious and repetitive, however it allows us to decide exactly what nodes are connected and in what direction. This is will be useful as we account for edge cases in our design.
+
+### **Basic Tree Terminology**
+* tree - graph with no cycles
+* binary tree - tree where nodes have at most 2 nodes
+* root - the ultimate parent, the single node of a tree that can access every other node through edges; by definition the root will not have a parent
+* internal node - a node that has children
+* leaf - a node that does not have any children
+* path - a series of nodes that can be traveled through edges - for example A, B, E is a path through the above tree
+
+† Pun Intended
