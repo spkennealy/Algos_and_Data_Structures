@@ -30,3 +30,39 @@ A Binary Tree is a Tree where nodes have at most 2 children. This means graphs 1
 * a linked list is a binary tree
 
 Take a moment to use the definitions we explored to verify that each of the three statements above is true. We bring up these three scenarios in particular because they are the simplest types of Binary Trees. We want to eventually build elegant algorithms and these simple scenarios will fuel our design.
+
+### **Representing a Tree with Node Instances**
+
+Let's explore a common way to represent binary trees using some object oriented design. A tree is a collection of nodes, so let's implement a `TreeNode` class. We'll use properties of `left` and `right` to reference the children of a `TreeNode`. That is, `left` and `right` will reference other `TreeNodes`:
+```js
+class TreeNode {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+```
+
+Constructing a tree is a matter of creating the nodes and setting left and right however we please. For example:
+```js
+let a = new TreeNode('a');
+let b = new TreeNode('b');
+let c = new TreeNode('c');
+let d = new TreeNode('d');
+let e = new TreeNode('e');
+let f = new TreeNode('f');
+
+a.left = b;
+a.right = c;
+b.left = d;
+b.right = e;
+c.right = f;
+```
+
+The visual representation of the tree is:
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/trees/images/graph_a.png)
+
+To simplify our diagrams, we'll omit the arrowheads on the edges. Moving forward you can assume that the top node is the root and the direction of edges points downward. In other words, node A is the Root. Node A can access node B through a.left, but Node B cannot access Node A.
+
+We now have a data structure we can use to explore Binary Tree algorithms! Creating a tree in this way may be tedious and repetitive, however it allows us to decide exactly what nodes are connected and in what direction. This is will be useful as we account for edge cases in our design.
