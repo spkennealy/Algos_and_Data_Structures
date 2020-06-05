@@ -76,3 +76,12 @@ We now have a data structure we can use to explore Binary Tree algorithms! Creat
 * path - a series of nodes that can be traveled through edges - for example A, B, E is a path through the above tree
 
 † Pun Intended
+
+
+## Inorder Preorder Postorder Notes
+
+### **Binary Tree Print Order Algorithms**
+
+Now that we have the basic definition of a binary tree, let's begin with three short algorithms that print out the values. The algorithms are structurally the same, however they will differ in what order the values are printed. We'll use the following tree as the input when running these algorithms:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/trees/images/graph_a.png)
