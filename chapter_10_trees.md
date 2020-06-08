@@ -85,3 +85,39 @@ We now have a data structure we can use to explore Binary Tree algorithms! Creat
 Now that we have the basic definition of a binary tree, let's begin with three short algorithms that print out the values. The algorithms are structurally the same, however they will differ in what order the values are printed. We'll use the following tree as the input when running these algorithms:
 
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/trees/images/graph_a.png)
+
+#### **In-Order**
+
+Let's begin with the inOrderPrint function. All three of our algorithms will be recursive and have the same base case. As always, our base case should cover the scenario where the input is trivially small enough so that we don't need to perform further calculation. Since our "problem" is to print all values in a tree, what is the simplest tree we can be given? The empty tree! A common mistake when designing recursive tree algorithms is to make the base case about the root being a leaf, instead we'll want the basecase to cover the root being empty:
+```js
+function inOrderPrint(root) {
+    if (root === null) return;
+    // ...
+}
+```
+
+Note that taking in an entire tree as input is really just a matter of taking in the root node. This is because the root node can access every other node through a path of edges. Our base case says, "if the tree is empty, return since there is nothing to print."
+
+Here is where the meat of the algorithm comes in. Given the root of a tree, the steps for inOrderPrint are:
+```cmd
+- print all nodes in the left subtree
+- print root
+- print all nodes in the right subtree
+```
+
+Translating this into code:
+```js
+function inOrderPrint(root) {
+    if (!root) return;
+
+    inOrderPrint(root.left);
+    console.log(root.val);
+    inOrderPrint(root.right);
+}
+```
+
+Given our tree, inOrderPrint would print the values in the order: `d, b, e, a, c, f`
+
+In-Order has the pattern of left, self, right. This means:
+* a node can only be printed once it's left subtree has been completely printed.
+* a node's right subtree can only be printed once the node itself has been printed.
