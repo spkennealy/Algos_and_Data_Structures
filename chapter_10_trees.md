@@ -121,3 +121,29 @@ Given our tree, inOrderPrint would print the values in the order: `d, b, e, a, c
 In-Order has the pattern of left, self, right. This means:
 * a node can only be printed once it's left subtree has been completely printed.
 * a node's right subtree can only be printed once the node itself has been printed.
+
+#### **Pre-Order**
+
+Given the root of a tree, the steps for `preOrderPrint` are:
+```cmd
+- print root
+- print all nodes in the left subtree
+- print all nodes in the right subtree
+```
+
+Translating this into code:
+```js
+function preOrderPrint(root) {
+    if (!root) return;
+
+    console.log(root.val);
+    preOrderPrint(root.left);
+    preOrderPrint(root.right);
+}
+```
+
+Given our tree, preOrderPrint would print the values in the order: `a, b, d, e, c, f`
+
+Pre-Order has the patten of self, left, right. This means:
+* a node must be printed before it's children
+* a node's left subtree must be printed before it's right subtree
