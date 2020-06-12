@@ -147,3 +147,29 @@ Given our tree, preOrderPrint would print the values in the order: `a, b, d, e, 
 Pre-Order has the patten of self, left, right. This means:
 * a node must be printed before it's children
 * a node's left subtree must be printed before it's right subtree
+
+#### **Post-Order**
+
+Given the root of a tree, the steps for `postOrderPrint` are:
+```cmd
+- print all nodes in the left subtree
+- print all nodes in the right subtree
+- print root
+```
+
+Translating this into code:
+```js
+function postOrderPrint(root) {
+    if (!root) return;
+
+    postOrderPrint(root.left);
+    postOrderPrint(root.right);
+    console.log(root.val);
+}
+```
+
+Given our Tree, postOrderPrint would print the values in the order: `d, e, b, f, c, a`
+
+Post-Order has the pattern of left, right, self. This means:
+* a node can only be printed after it's left and right subtrees
+* a node's left subtree is printed before it's right subtree
