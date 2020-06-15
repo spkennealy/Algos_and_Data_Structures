@@ -1,11 +1,15 @@
 function inOrderArray(root) {
-    var arr = [];
-
+    if (!root) return [];
     
+    return [
+        ...inOrderArray(root.left),
+        root.val,
+        ...inOrderArray(root.right)
+    ]
 }
 
 function postOrderArray(root) {
-
+    
 }
 
 
