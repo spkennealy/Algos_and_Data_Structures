@@ -173,3 +173,35 @@ Given our Tree, postOrderPrint would print the values in the order: `d, e, b, f,
 Post-Order has the pattern of left, right, self. This means:
 * a node can only be printed after it's left and right subtrees
 * a node's left subtree is printed before it's right subtree
+
+
+## Depth and Breadth First Traversal
+
+Let's add two more tree traversal algorithms to our arsenal. Depth-First and Breadth-First are two classic traversal strategies that differ in the order nodes are hit. In this reading, our candidate tree will be:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/trees/images/graph_a.png)
+
+Like we are accustomed to, we can represent the tree programmatically with:
+```js
+class TreeNode {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+let a = new TreeNode('a');
+let b = new TreeNode('b');
+let c = new TreeNode('c');
+let d = new TreeNode('d');
+let e = new TreeNode('e');
+let f = new TreeNode('f');
+
+a.left = b;
+a.right = c;
+b.left = d;
+b.right = e;
+c.right = f;
+```
+
