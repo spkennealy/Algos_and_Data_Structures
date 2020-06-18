@@ -205,3 +205,13 @@ b.right = e;
 c.right = f;
 ```
 
+### **Depth-First**
+
+To help verbalize Depth-First (DF), we'll be using a few familial terms to describe the relative positions of the nodes. Think of the words you would use if viewing a family tree! Here are some examples:
+* `B` and `C` are siblings
+* `D` and `E` are descendants of `B`
+* `B`, `C`, `D`, `E`, `F` are all descendants of `A`
+
+A Depth-First traversal will continually travel deeper into a tree before switching branches. This means that, given a node, we must visit all of it's descendants before visiting it's sibling.
+
+Performing DF on our tree will hit the nodes in the order: `A, B, D, E, C, F`
