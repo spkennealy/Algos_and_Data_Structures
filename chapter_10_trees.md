@@ -215,3 +215,58 @@ To help verbalize Depth-First (DF), we'll be using a few familial terms to descr
 A Depth-First traversal will continually travel deeper into a tree before switching branches. This means that, given a node, we must visit all of it's descendants before visiting it's sibling.
 
 Performing DF on our tree will hit the nodes in the order: `A, B, D, E, C, F`
+
+#### **Depth-First Implementation**
+
+To travel the nodes of a tree according to Depth-First behavior, we'll utilize a **stack**. Recall from earlier that a stack is LIFO (Last In, First Out). Our strategy is to use an array as a stack. We'll use `push` to add to the top of our stack and `pop` to remove the top. Below is a complete implementation of `depthFirst`. Try to interpret the code below and scroll further to see the annotated version:
+```js
+function depthFirst(root) {
+    let stack = [ root ];
+    while (stack.length) {
+        let node = stack.pop();
+        console.log(node.val);
+        if (node.right) stack.push(node.right);
+        if (node.left) stack.push(node.left);
+    }
+}
+```
+
+```js
+function depthFirst(root) {
+    // initialize the stack with the root node
+    let stack = [ root ];
+
+    // continue running the algorithm while there are still nodes on the stack
+    while (stack.length) {
+
+        // pop the top node from the stack
+        let node = stack.pop();
+
+        // we consider a node visited once we pop it,
+        // so we should print the node's value now
+        console.log(node.val);
+
+        // add the node's left and right children, if they exist
+        if (node.right) stack.push(node.right);
+        if (node.left) stack.push(node.left);
+
+        // IMPORTANT: do not print out the children yet; they must wait their turn to be popped first
+    }
+}
+```
+
+You should watch the video lecture that follows this reading for a visual on how a stack inherently gives us DF order. For now, a key idea to take away is that we only consider a node "visited" once we pop it. We do not consider a node "visited" when we push it.
+
+Because a stack naturally leads to DF order on a tree, we can easily write a recursive version. Why is recursion relevant to DF? Recursion utilizies the call `stack`:
+```js
+function depthFirstRecur(root) {
+    if (!root) return;
+    console.log(root.val);
+    depthFirstRecur(root.left);
+    depthFirstRecur(root.right);
+}
+```
+
+Does this code look familiar? It's identical to the `preOrderPrint` function we wrote previously. That's right, pre-order and depth-first are identical tree node orderings.
+
+You should study both the iterative and recursive implementations as they will both prove valuable to solving problems.
