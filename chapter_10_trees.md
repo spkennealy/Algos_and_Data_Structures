@@ -270,3 +270,14 @@ function depthFirstRecur(root) {
 Does this code look familiar? It's identical to the `preOrderPrint` function we wrote previously. That's right, pre-order and depth-first are identical tree node orderings.
 
 You should study both the iterative and recursive implementations as they will both prove valuable to solving problems.
+
+### **Breadth-First**
+
+This algorithm has nothing to do with bread. The word "breadth" is the same as "width". To help veribalize Breadth-First (BF) we'll need to understand the simple concept of tree **levels**. With the tree at the top of this reading in mind, we can say the following:
+* level 0 contains `A`
+* level 1 contains `B`, `C`
+* level 2 contains `D`, `E`, `F`
+
+A Breadth-First traversal will visit all nodes across a level, before moving to the next level. This means we travel laterally as much as we can before going deeper into the tree.
+
+Perform BF on our tree will hit the nodes in the order: `A, B, C, D, E, F`
