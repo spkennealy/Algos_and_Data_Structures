@@ -281,3 +281,42 @@ This algorithm has nothing to do with bread. The word "breadth" is the same as "
 A Breadth-First traversal will visit all nodes across a level, before moving to the next level. This means we travel laterally as much as we can before going deeper into the tree.
 
 Perform BF on our tree will hit the nodes in the order: `A, B, C, D, E, F`
+
+#### **Breadth-First Implementation**
+
+While DF uses a stack, BF will use a **queue**. Recall that a queue is FIFO (First In, First Out). The code is very similar to our iterative DF, except we will use an array as a queue. `shift` will remove the front of the queue and `push` will add to the back of the queue. Interpret the implementation below and scroll further to the annotated version when you need more insight:
+```js
+function breadthFirst(root) {
+    let queue = [ root ];
+    while (queue.length) {
+        let node = queue.shift();
+
+        console.log(node.val);
+
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
+    }
+}
+```
+
+```js
+function breadthFirst(root) {
+    // initialize the queue with the root node
+    let queue = [ root ];
+
+    // continue running the algorithm while there are still nodes on the queue
+    while (queue.length) {
+        // remove the front node from the queue
+        let node = queue.shift();
+
+        // the node we just removed is now "visited", so print it
+        console.log(node.val);
+
+        // add the left and right children to the back of the queue, if they exist
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
+
+        // IMPORTANT: do not print out the children yet; they must wait their turn to exit the front of the queue first
+    }
+}
+```
