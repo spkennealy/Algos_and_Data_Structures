@@ -320,3 +320,5 @@ function breadthFirst(root) {
     }
 }
 ```
+
+We'll rarely run into a recursive BF implementation (probably never) because recursion uses an underlying call stack, but we really want the opposite of a stack (a queue).
