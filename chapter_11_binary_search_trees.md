@@ -21,3 +21,25 @@ Take a moment to verify that the above binary trees are BSTs. Note that image 2 
 
 Below is an example of a binary tree that is **not** a search tree because a left child (35) is greater than it's parent (23):
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/not_bst.png)
+
+## A BST is a Sorted Data Structure
+
+So what's the big deal with BSTs? Well, because of the properties of a BST, we can consider the tree as having an order to the values. That means the values are fully sorted! By looking at the three BST examples above, you are probably not convinced of things being sorted. This is because the ordering is encoded by an inorder traversal. Let's recall our previous `inOrderPrint` function:
+```js
+function inOrderPrint(root) {
+    if (!root) return;
+
+    inOrderPrint(root.left);
+    console.log(root.val);
+    inOrderPrint(root.right);
+}
+```
+
+If we run `inOrderPrint` on the three BSTs, we will get the following output:
+```cmd
+BST 1: 42
+BST 2: 4, 5, 6
+BST 3: 1, 5, 7, 10, 16, 16
+```
+
+For each tree, we printed out values in increasing order! A binary search tree contains sorted data; this will come into play when we perform algorithms on this data structure.
