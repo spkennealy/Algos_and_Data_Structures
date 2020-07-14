@@ -43,3 +43,103 @@ BST 3: 1, 5, 7, 10, 16, 16
 ```
 
 For each tree, we printed out values in increasing order! A binary search tree contains sorted data; this will come into play when we perform algorithms on this data structure.
+
+## Naive BST Implementation
+
+Let's implement a `BST` class that will maintain the ordered property through any number of insertions into the tree. We are going to avoid manually creating all nodes and explicitly setting `left`s and `right`s, so we don't have to worry about breaking order. We'll use our classic `TreeNode` as a component of `BST`. In addition, we'll need a proper `BST#insert` method that will conduct legal insertions on the tree. Interpret the code below and scroll further to our annotated version when you need clarification:
+```js
+class TreeNode {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(val, root=this.root) {
+        if(!this.root) {
+            this.root = new TreeNode(val);
+            return;
+        }
+
+        if (val < root.val) {
+            if (!root.left) {
+                root.left = new TreeNode(val);
+            } else {
+                this.insert(val, root.left);
+            }
+        } else {
+            if (!root.right) {
+                root.right = new TreeNode(val);
+            } else {
+                this.insert(val, root.right);
+            }
+        }
+    }
+}
+```
+
+```js
+// commented naive BST class
+class BST {
+    constructor() {
+        // initialize the tree to be empty
+        this.root = null;
+    }
+
+    insert(val, root=this.root) {
+        // if the tree is currently empty, then create the node as the 'absolute' root
+        if(!this.root) {
+            this.root = new TreeNode(val);
+            return;
+        }
+
+        // otherwise, the tree is not empty, so...
+        // if our val to insert is less than the root...
+        if (val < root.val) {
+            if (!root.left) {                       // ...and the left child does not exist,
+                root.left = new TreeNode(val);      //      then create the node as the left child
+            } else {                                // ...and the left child already exists,
+                this.insert(val, root.left);        //      then recursively insert on the left subtree
+            }
+
+        // if our val to insert is greater than or equal to the root...
+        } else {
+            if (!root.right) {                      //  ...and the right child does not exist,
+                root.right = new TreeNode(val);     //      then create the node as the right child
+            } else {                                //  ...and the right child already exists,
+                this.insert(val, root.right);       //      then recursively insert on the right subtree
+            }
+        }
+    }
+}
+```
+
+We can call `insert` to build up the `BST` without worrying about breaking the search tree property. Let's build two different trees:
+```js
+let tree1 = new BST();
+tree1.insert(10);
+tree1.insert(5);
+tree1.insert(16);
+tree1.insert(1);
+tree1.insert(7);
+tree1.insert(16);
+
+let tree2 = new BST();
+tree2.insert(1);
+tree2.insert(5);
+tree2.insert(7);
+tree2.insert(10);
+tree2.insert(16);
+tree2.insert(16);
+```
+
+The insertions above will yield the following trees:
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/good_bad_bst.png)
+
+Are you cringing at `tree2`? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our `BST` implementation as **naive**. Both of these trees are Binary Search Trees, however not all BSTs are created equal. A worst case BST degenerates into a linked list. The "best" BSTs are **height balanced**, we'll explore this concept soon™.
