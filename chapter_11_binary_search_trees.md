@@ -143,3 +143,7 @@ The insertions above will yield the following trees:
 ![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/good_bad_bst.png)
 
 Are you cringing at `tree2`? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our `BST` implementation as **naive**. Both of these trees are Binary Search Trees, however not all BSTs are created equal. A worst case BST degenerates into a linked list. The "best" BSTs are **height balanced**, we'll explore this concept soon™.
+
+## Searching and Balanced BSTs
+
+Let's explore the main application of a Binary Search Tree. Since a BST is a sorted data structure, this allows us to conduct the Binary Search algorithm. This algorithm will be similar to the same Binary Search strategy we used on sorted arrays!
