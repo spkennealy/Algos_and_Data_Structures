@@ -147,3 +147,10 @@ Are you cringing at `tree2`? You should be. Although we have the same values in 
 ## Searching and Balanced BSTs
 
 Let's explore the main application of a Binary Search Tree. Since a BST is a sorted data structure, this allows us to conduct the Binary Search algorithm. This algorithm will be similar to the same Binary Search strategy we used on sorted arrays!
+
+### **Implementing Binary Search on a BST**
+
+Our goal is to implement a #search method on our previous BST class that will solve the problem:
+```cmd
+Given a binary search tre
+```
