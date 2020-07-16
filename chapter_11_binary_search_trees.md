@@ -154,3 +154,66 @@ Our goal is to implement a #search method on our previous BST class that will so
 ```cmd
 Given a binary search tre
 ```
+
+In other words, our `BST#search` should satisfy the following behavior:
+```js
+let tree = new BST();
+tree.insert(10);
+tree.insert(5);
+tree.insert(16);
+tree.insert(1);
+tree.insert(7);
+tree.insert(16);
+
+tree.search(7);     // => true
+tree.search(16);    // => true
+tree.search(14);    // => false
+```
+
+As with many tree problems, this problem lends itself nicely to recursion! Like always, our base case should capture the scenario where the input tree is trivial and we know the answer to the problem without further calculation. If the given tree is empty, then we can be certain that the target is not found in the tree. The logic of our BST#search method will be much the same compared to our binarySearch function for sorted arrays. Try to interpret the code below and scroll further to the annotated version when you need clarification
+```js
+// assuming our BST class from the previous section
+class BST {
+    // ...
+
+    search(val, root=this.root) {
+        if (!root) return false;
+
+        if (val < root.val) {
+            return this.search(val, root.left);
+        } else if (val > root.val){
+            return this.search(val, root.right);
+        } else {
+            return true;
+        }
+    }
+}
+```
+
+```js
+// assuming our BST class from the previous section
+class BST {
+    // ...
+
+    // commented
+    search(val, root=this.root) {
+        // if the tree is empty, then the target val is not in the tree, so return false
+        if (!root) return false;
+
+        // otherwise the tree is not empty, so...
+        if (val < root.val) {
+            // if the target is less than the root,
+            //  then search the left subtree
+            return this.search(val, root.left);
+        } else if (val > root.val){
+            // if the target is greater than the root,
+            //  then search the right subtree
+            return this.search(val, root.right);
+        } else {
+            // otherwise, the target must be equal to the root
+            // so return true since we found it!
+            return true;
+        }
+    }
+}
+```
