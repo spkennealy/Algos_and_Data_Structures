@@ -217,3 +217,22 @@ class BST {
     }
 }
 ```
+
+### **Height Balance**
+
+Before we analyze the time complexity of `BST#search`, we'll first need to learn about height balance. Recalling what we touched on briefly in our chat on binary trees, **height** is defined as the number of edges between the root and **farthest** leaf in a tree. Note that height is dictated by the farthest leaf (think worst case):
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/height.png)
+
+Following this definition, a tree consisting of a single node has height 0. We consider then an empty tree as having height -1. Height is relevant because not all BSTs are created equal! That is, some BSTs have "good / small" heights, others have "bad / large" heights. Take a look at these two BSTs containing identical values, but very different heights:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/balanced_unbalanced.png)
+
+`Tree 1` is preferred over `Tree 2`, because `Tree 1` is **balanced**. Balanced Binary Trees will be the most efficient to perform operations on.
+
+For a binary tree to be **balanced**:
+* the left and right subtrees must differ in height by at most 1
+* AND the left subtree is balanced
+* AND the right subtree is balanced
+
+Notice that **balanced** has a recursive definition. Like you probably guessed, the empty tree is considered balanced. This will be the base case of our definition.
