@@ -251,3 +251,12 @@ Worst case for the algorithm occurs when the target value is not present in the 
 * O(log(n)) time for a balanced tree:
 * O(n) time for unbalanced tree:
 
+**Space Complexity Analysis of Binary Search for BSTs**
+
+No additional space is needed for the algorithm, so we have constant O(1) space.
+
+To play devil's advocate, what if we count the recursive stack calls as contributing to the space complexity? Some coding challenges in your job hunt may pose this. If that is the case then our recursive implementation above will use:
+* O(log(n)) space for a balanced tree
+* O(n) space for unbalanced tree
+
+To truly get constant space out of Binary Search, we're going to have to avoid recursion. Can you think of how we can write the algorithm iteratively? We'll save this for the upcoming project :).
