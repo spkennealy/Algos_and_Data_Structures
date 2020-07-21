@@ -245,3 +245,9 @@ A balanced binary tree is incredible to have because it's height is guaranteed t
 
 To make the approximations above, we rounded the result of each log down to the nearest integer. If you are not convinced of how powerful this is, this means that a balanced tree of 1000 nodes will have a height of just 10.
 
+**Time Complexity Analysis of Binary Search for BSTs**
+
+Worst case for the algorithm occurs when the target value is not present in the tree. This means that we must traverse a path from root to a leaf, so we must travel the full height of the tree in the worst case. However, like we discussed, the height of a tree can vary wildly. We can have a tree with minimal height (a balanced tree like Tree 1), or we can have a tree with maximal height (a linked list like Tree 2).
+* O(log(n)) time for a balanced tree:
+* O(n) time for unbalanced tree:
+
