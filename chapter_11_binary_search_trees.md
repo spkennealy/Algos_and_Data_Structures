@@ -236,3 +236,12 @@ For a binary tree to be **balanced**:
 * AND the right subtree is balanced
 
 Notice that **balanced** has a recursive definition. Like you probably guessed, the empty tree is considered balanced. This will be the base case of our definition.
+
+**Only the Best Trees Have Logs**
+
+A balanced binary tree is incredible to have because it's height is guaranteed to be O(log2(n)), where n is the number of nodes in the tree. Let's take a look at a few examples:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/binary_search_trees/images/log_heights.png)
+
+To make the approximations above, we rounded the result of each log down to the nearest integer. If you are not convinced of how powerful this is, this means that a balanced tree of 1000 nodes will have a height of just 10.
+
