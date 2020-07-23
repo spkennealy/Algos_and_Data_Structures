@@ -1,0 +1,3 @@
+# Graphs
+
+It's time to generalize our knowledge! We've explored binary trees and the fundamental algorithms that accompany them. Naturally, we implemented these algorithms assuming the contraints of a binary tree. To review, these assumptions include the lack of cycles, a maximum of two children, and a single root node. However, what if we take away these contraints? How can we modify the algorithms to operate on general graphs?
