@@ -24,3 +24,25 @@ Here are some highlights:
 ## Graph Implementations
 
 There are many ways to represent a graph programmatically. Let's take a moment to explore each and describe the tradeoffs we make when choosing among them. We will use `Graph 3` from above as our candidate. Bear in mind that our graph is directed. For example, this means that `C` can access `D`, but `D` cannot access `C`.
+
+```js
+class GraphNode {
+    constructor(val) {
+        this.val = val;
+        this.neighbors = [];
+    }
+}
+
+let a = new GraphNode('a');
+let b = new GraphNode('b');
+let c = new GraphNode('c');
+let d = new GraphNode('d');
+let e = new GraphNode('e');
+let f = new GraphNode('f');
+a.neighbors = [b, c, e];
+c.neighbors = [b, d];
+e.neighbors = [a];
+f.neighbors = [e];
+```
+
+This implementation is great because it feels familiar to how we implemented trees. However, this implementation is clunky in that we have no easy way to refer to the entire graph. How can we pass this graph to a function? Recall that there is no root to act as the definite starting point.
