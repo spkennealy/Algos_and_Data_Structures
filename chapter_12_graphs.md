@@ -25,6 +25,11 @@ Here are some highlights:
 
 There are many ways to represent a graph programmatically. Let's take a moment to explore each and describe the tradeoffs we make when choosing among them. We will use `Graph 3` from above as our candidate. Bear in mind that our graph is directed. For example, this means that `C` can access `D`, but `D` cannot access `C`.
 
+
+### GraphNode Class
+
+This implementation is most similar to how we implemented binary trees. That is, we create a node class that maintains a value and an array of references to neighboring nodes. This easily solves the problem that a node can have any number of neighbors, no longer just a left and right.
+
 ```js
 class GraphNode {
     constructor(val) {
