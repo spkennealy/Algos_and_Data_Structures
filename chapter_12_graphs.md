@@ -51,3 +51,29 @@ f.neighbors = [e];
 ```
 
 This implementation is great because it feels familiar to how we implemented trees. However, this implementation is clunky in that we have no easy way to refer to the entire graph. How can we pass this graph to a function? Recall that there is no root to act as the definite starting point.
+
+### Adjacency Matrix
+
+This is the often the mathematician's preferred way of representing a graph. We use a 2D array to represent edges. We'll first map each node's value to an index. This means `A -> 0`, `B -> 1`, `C -> 2`, etc.. Below is the mapping for `Graph 3`:
+
+![](https://s3-us-west-1.amazonaws.com/appacademy-open-assets/data_structures_algorithms/graphs/images/adj_matrix_graph.png)
+
+From here, the row index will correspond to the source of an edge and the column index will correspond to its destination. A value of `true` will mean that there does exist an edge from source to destination.
+
+```js
+let matrix = [
+/*          A       B       C       D       E       F   */
+/*A*/    [true,  true,   true,   false,  true,   false],
+/*B*/    [false, true,   false,  false,  false,  false],
+/*C*/    [false, true,   true,   true,   false,  false],
+/*D*/    [false, false,  false,  true,   false,  false],
+/*E*/    [true,  false,  false,  false,  true,   false],
+/*F*/    [false, false,  false,  false,  true,   true]
+];
+```
+
+A few things to note about using an adjacency matrix:
+* when the edges have direction, `matrix[i][j]` may not be the same as `matrix[j][i]`
+* it is common to say that a node is adjacent to itself, so `matrix[x][x] === true` for any `x`
+
+An advantage of the matrix implementation is that it allows us to refer to the entire graph by simply referring to the 2D array. A huge disadvantage of using a matrix is the space required. To represent a graph of n nodes, we must allocate n2 space for the 2D array. This is even more upsetting when there are few edges in graph. We will have to use n2 space, even though the array would be sparse with only a few `true` elements.
